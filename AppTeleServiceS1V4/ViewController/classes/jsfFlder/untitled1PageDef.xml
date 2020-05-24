@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="untitled1PageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ActiviteentrepriseView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ActiviteentrepriseView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ActiviteentrepriseView1Iterator" id="Kactent">
+      <AttrNames>
+        <Item Value="Kactent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ActiviteentrepriseView1Iterator" id="Libelleae">
+      <AttrNames>
+        <Item Value="Libelleae"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

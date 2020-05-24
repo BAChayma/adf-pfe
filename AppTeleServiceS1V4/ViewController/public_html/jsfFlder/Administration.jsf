@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Administration.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Administration.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Administration.f1}">
+           <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Contribuable.pt1}">
+                <f:facet name="bodyfacet"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Administration-->
+</f:view>

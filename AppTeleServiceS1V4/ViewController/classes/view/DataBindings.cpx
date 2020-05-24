@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/jsfFlder/ConsulterDossier.jsf" usageId="view_ConsulterDossierPageDef"/>
+    <page path="/jsfFlder/Declaration.jsf" usageId="view_DeclarationPageDef"/>
+    <page path="/jsfFlder/untitled1.jspx" usageId="view_untitled1PageDef"/>
+    <page path="/jsfFlder/untitled2.jsf" usageId="view_untitled2PageDef"/>
+    <page path="/jsfFlder/Contribuable.jsf" usageId="view_ContribuablePageDef"/>
+    <page path="/jsfFlder/FormeJuridique.jsf" usageId="view_FormeJuridiquePageDef"/>
+    <page path="/jsfFlder/ActiviteEntreprise.jsf" usageId="view_ActiviteEntreprisePageDef"/>
+    <page path="/jsfFlder/Agence.jsf" usageId="view_AgencePageDef"/>
+    <page path="/jsfFlder/Impot.jsf" usageId="view_ImpotPageDef"/>
+    <page path="/jsfFlder/ModePaiement.jsf" usageId="view_ModePaiementPageDef"/>
+    <page path="/jsfFlder/Pays.jsf" usageId="view_PaysPageDef"/>
+    <page path="/jsfFlder/Banque.jsf" usageId="view_BanquePageDef"/>
+    <page path="/jsfFlder/Inscription.jsf" usageId="view_InscriptionPageDef"/>
+    <page path="/jsfFlder/InscriptionContribuable.jsf" usageId="view_InscriptionContribuablePageDef"/>
+    <page path="/jsfFlder/Responsable.jsf" usageId="view_ResponsablePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_ConsulterDossierPageDef" path="jsfFlder.ConsulterDossierPageDef"/>
+    <page id="view_DeclarationPageDef" path="jsfFlder.DeclarationPageDef"/>
+    <page id="view_untitled1PageDef" path="jsfFlder.untitled1PageDef"/>
+    <page id="view_untitled2PageDef" path="jsfFlder.untitled2PageDef"/>
+    <page id="view_ContribuablePageDef" path="jsfFlder.ContribuablePageDef"/>
+    <page id="view_FormeJuridiquePageDef" path="jsfFlder.FormeJuridiquePageDef"/>
+    <page id="view_ActiviteEntreprisePageDef" path="jsfFlder.ActiviteEntreprisePageDef"/>
+    <page id="view_AgencePageDef" path="jsfFlder.AgencePageDef"/>
+    <page id="view_ImpotPageDef" path="jsfFlder.ImpotPageDef"/>
+    <page id="view_ModePaiementPageDef" path="jsfFlder.ModePaiementPageDef"/>
+    <page id="view_PaysPageDef" path="jsfFlder.PaysPageDef"/>
+    <page id="view_BanquePageDef" path="jsfFlder.BanquePageDef"/>
+    <page id="view_InscriptionPageDef" path="jsfFlder.InscriptionPageDef"/>
+    <page id="view_InscriptionContribuablePageDef" path="jsfFlder.InscriptionContribuablePageDef"/>
+    <page id="view_ResponsablePageDef" path="jsfFlder.ResponsablePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="FormejuridiqueAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="FormejuridiqueAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ContribuableAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ContribuableAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ActiviteentrepriseAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ActiviteentrepriseAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AGENCEAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AGENCEAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ImpotAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ImpotAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ModepaiementAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ModepaiementAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="PaysAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="PaysAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="BanqueAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="BanqueAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="UtilisateurAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="UtilisateurAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="PersonneAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="PersonneAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

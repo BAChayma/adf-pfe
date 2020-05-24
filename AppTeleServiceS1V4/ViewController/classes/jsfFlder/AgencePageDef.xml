@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="AgencePageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AdresseVO1" RangeSize="25" DataControl="AGENCEAMDataControl" id="AdresseVO1Iterator"/>
+    <iterator Binds="AgenceVO1" RangeSize="25" DataControl="AGENCEAMDataControl" id="AgenceVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Kadresse">
+      <AttrNames>
+        <Item Value="Kadresse"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Numrue">
+      <AttrNames>
+        <Item Value="Numrue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Rue">
+      <AttrNames>
+        <Item Value="Rue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Cp">
+      <AttrNames>
+        <Item Value="Cp"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdresseVO1Iterator" StaticList="false" Uses="LOV_Kstructureadr" id="Kstructureadr"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="AgenceVO1Iterator" id="AgenceVO1">
+      <nodeDefinition DefName="model.VO.AgenceVO" Name="AgenceVO10">
+        <AttrNames>
+          <Item Value="Kagence"/>
+          <Item Value="Libelleagence"/>
+          <Item Value="Kbanque"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AgenceVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="AgenceVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="AgenceVO1Iterator" id="Kagence">
+      <AttrNames>
+        <Item Value="Kagence"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AgenceVO1Iterator" id="Libelleagence">
+      <AttrNames>
+        <Item Value="Libelleagence"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AgenceVO1Iterator" StaticList="false" Uses="LOV_Kbanque" id="Kbanque" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="AdresseVO1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AGENCEAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AGENCEAMDataControl"/>
+  </bindings>
+</pageDefinition>

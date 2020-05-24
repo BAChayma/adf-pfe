@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="FormeJuridiquePageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FormejuridiqueVO1" RangeSize="25" DataControl="FormejuridiqueAMDataControl"
+              id="FormejuridiqueVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="FormejuridiqueVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="FormejuridiqueVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="FormejuridiqueAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="FormejuridiqueAMDataControl"/>
+    <tree IterBinding="FormejuridiqueVO1Iterator" id="FormejuridiqueVO1">
+      <nodeDefinition DefName="model.VO.FormejuridiqueVO" Name="FormejuridiqueVO10">
+        <AttrNames>
+          <Item Value="Kformjuri"/>
+          <Item Value="Libellefj"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="FormejuridiqueVO1Iterator" id="Kformjuri">
+      <AttrNames>
+        <Item Value="Kformjuri"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FormejuridiqueVO1Iterator" id="Libellefj">
+      <AttrNames>
+        <Item Value="Libellefj"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="InscriptionPageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UtilisateurVO1" RangeSize="25" DataControl="UtilisateurAMDataControl" id="UtilisateurVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="UtilisateurVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="UtilisateurAMDataControl"/>
+    <attributeValues IterBinding="UtilisateurVO1Iterator" id="Kuser">
+      <AttrNames>
+        <Item Value="Kuser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurVO1Iterator" id="Username">
+      <AttrNames>
+        <Item Value="Username"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurVO1Iterator" id="Mdp">
+      <AttrNames>
+        <Item Value="Mdp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="UtilisateurVO1Iterator" StaticList="false" Uses="LOV_Kprofile" id="Kprofile"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

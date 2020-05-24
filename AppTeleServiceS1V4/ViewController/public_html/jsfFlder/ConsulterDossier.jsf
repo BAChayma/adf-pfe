@@ -1,0 +1,546 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ConsulterDossier.jsf" id="d1"
+                 binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.f1}">
+           <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Contribuable.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.ps1}"
+                                      orientation="vertical" splitterPosition="350">
+                        <f:facet name="first">
+                            <af:panelSplitter id="ps2"
+                                              binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.ps2}"
+                                              orientation="vertical" splitterPosition="150">
+                                <f:facet name="first">
+                                    <af:panelBox text="Recherche d'un contribuable" id="pb2"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pb2}">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelGroupLayout id="pgl1"
+                                                             binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pgl1}"
+                                                             layout="vertical">
+                                            <af:query id="qryId1" headerText=""
+                                                      disclosed="true"
+                                                      value="#{bindings.ContribuableVOCriteriaQuery.queryDescriptor}"
+                                                      model="#{bindings.ContribuableVOCriteriaQuery.queryModel}"
+                                                      queryListener="#{bindings.ContribuableVOCriteriaQuery.processQuery}"
+                                                      queryOperationListener="#{bindings.ContribuableVOCriteriaQuery.processQueryOperation}"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.qryId1}"
+                                                      saveQueryMode="hidden" displayMode="design"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelBox>
+                                </f:facet>
+                                <f:facet name="second">
+                                    <af:panelBox text="Information d'un contribuable" id="pb1"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pb1}">
+                                        <f:facet name="toolbar"/>
+                                        <af:toolbar id="t7"
+                                                    binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t7}">
+                                            <af:button text="Modifier" id="b7"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b7}"/>
+                                            <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                                       disabled="#{!bindings.Commit.enabled}" id="b8"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b8}"/>
+                                            <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                                       disabled="#{!bindings.Rollback.enabled}" immediate="true"
+                                                       id="b9"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b9}">
+                                                <af:resetActionListener/>
+                                            </af:button>
+                                        </af:toolbar>
+                                        <af:panelFormLayout id="pfl1"
+                                                            binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pfl1}"
+                                                            maxColumns="2" rows="4">
+                                            <af:inputText value="#{bindings.Nomcommerciale.inputValue}"
+                                                          label="#{bindings.Nomcommerciale.hints.label}"
+                                                          required="#{bindings.Nomcommerciale.hints.mandatory}"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Nomcommerciale.hints.precision}"
+                                                          shortDesc="#{bindings.Nomcommerciale.hints.tooltip}" id="it1"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it1}">
+                                                <f:validator binding="#{bindings.Nomcommerciale.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Raisonsociale.inputValue}"
+                                                          label="#{bindings.Raisonsociale.hints.label}"
+                                                          required="#{bindings.Raisonsociale.hints.mandatory}"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Raisonsociale.hints.precision}"
+                                                          shortDesc="#{bindings.Raisonsociale.hints.tooltip}" id="it2"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it2}">
+                                                <f:validator binding="#{bindings.Raisonsociale.validator}"/>
+                                            </af:inputText>
+                                            <af:inputDate value="#{bindings.Datedebexp.inputValue}"
+                                                          label="#{bindings.Datedebexp.hints.label}"
+                                                          required="#{bindings.Datedebexp.hints.mandatory}"
+                                                          columns="50"
+                                                          shortDesc="#{bindings.Datedebexp.hints.tooltip}" id="id1"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.id1}">
+                                                <f:validator binding="#{bindings.Datedebexp.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.Datedebexp.format}"/>
+                                            </af:inputDate>
+                                            <af:inputText value="#{bindings.Capitalsociale.inputValue}"
+                                                          label="#{bindings.Capitalsociale.hints.label}"
+                                                          required="#{bindings.Capitalsociale.hints.mandatory}"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Capitalsociale.hints.precision}"
+                                                          shortDesc="#{bindings.Capitalsociale.hints.tooltip}" id="it3"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it3}">
+                                                <f:validator binding="#{bindings.Capitalsociale.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Capitalsociale.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Registrecommerce.inputValue}"
+                                                          label="#{bindings.Registrecommerce.hints.label}"
+                                                          required="#{bindings.Registrecommerce.hints.mandatory}"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Registrecommerce.hints.precision}"
+                                                          shortDesc="#{bindings.Registrecommerce.hints.tooltip}"
+                                                          id="it4"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it4}">
+                                                <f:validator binding="#{bindings.Registrecommerce.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.activiteEse.inputValue}"
+                                                                label="#{bindings.activiteEse.label}"
+                                                                required="#{bindings.activiteEse.hints.mandatory}"
+                                                                shortDesc="#{bindings.activiteEse.hints.tooltip}"
+                                                                id="soc1"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc1}">
+                                                <f:selectItems value="#{bindings.activiteEse.items}" id="si1"
+                                                               binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si1}"/>
+                                                <f:validator binding="#{bindings.activiteEse.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.nationnalite.inputValue}"
+                                                                label="#{bindings.nationnalite.label}"
+                                                                required="#{bindings.nationnalite.hints.mandatory}"
+                                                                shortDesc="#{bindings.nationnalite.hints.tooltip}"
+                                                                id="soc2"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc2}">
+                                                <f:selectItems value="#{bindings.nationnalite.items}" id="si2"
+                                                               binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si2}"/>
+                                                <f:validator binding="#{bindings.nationnalite.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.Kformjuri.inputValue}"
+                                                                label="#{bindings.Kformjuri.label}"
+                                                                required="#{bindings.Kformjuri.hints.mandatory}"
+                                                                shortDesc="#{bindings.Kformjuri.hints.tooltip}"
+                                                                id="soc3"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc3}">
+                                                <f:selectItems value="#{bindings.Kformjuri.items}" id="si3"
+                                                               binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si3}"/>
+                                                <f:validator binding="#{bindings.Kformjuri.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:panelFormLayout>
+                                    </af:panelBox>
+                                </f:facet>
+                            </af:panelSplitter>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelTabbed position="above" id="pt2"
+                                            binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pt2}">
+                                <af:showDetailItem id="tab1" text="Adresse"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab1}">
+                                    <af:panelTabbed position="above" id="pt3"
+                                                    binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pt3}">
+                                        <af:showDetailItem id="tab5" text="Liste des adresses"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab5}">
+                                            <af:toolbar id="t3"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t3}">
+                                                <af:button text="Modifier" id="b11"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b11}"
+                                                           icon="#{resource['images:modifier.png']}">
+                                                    <af:showPopupBehavior popupId="::p1"/>
+                                                </af:button>
+                                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                                           disabled="#{!bindings.Delete.enabled}" id="b12"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b12}"
+                                                           icon="#{resource['images:supprimer.png']}"/>
+                                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                                           disabled="#{!bindings.Commit.enabled}" id="b13"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b13}"
+                                                           icon="#{resource['images:commit.png']}"/>
+                                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                                           disabled="#{!bindings.Rollback.enabled}" immediate="true"
+                                                           id="b14"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b14}"
+                                                           icon="#{resource['images:rollback.png']}">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                            </af:toolbar>
+                                            <af:table value="#{bindings.AdresseVO3.collectionModel}" var="row"
+                                                      rows="#{bindings.AdresseVO3.rangeSize}"
+                                                      emptyText="#{bindings.AdresseVO3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      fetchSize="#{bindings.AdresseVO3.rangeSize}" id="t1"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t1}"
+                                                      partialTriggers="::b1 ::b12">
+                                                <af:column headerText="ID adresse" id="c1">
+                                                    <af:outputText value="#{row.Kadresse}"
+                                                                   shortDesc="#{bindings.AdresseVO3.hints.Kadresse.tooltip}"
+                                                                   id="ot1">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.AdresseVO3.hints.Kadresse.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column headerText="Numero rue" id="c2">
+                                                    <af:outputText value="#{row.Numrue}"
+                                                                   shortDesc="#{bindings.AdresseVO3.hints.Numrue.tooltip}"
+                                                                   id="ot2">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.AdresseVO3.hints.Numrue.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column headerText="Rue" id="c3">
+                                                    <af:outputText value="#{row.Rue}"
+                                                                   shortDesc="#{bindings.AdresseVO3.hints.Rue.tooltip}"
+                                                                   id="ot3"/>
+                                                </af:column>
+                                                <af:column headerText="Code postale" id="c4">
+                                                    <af:outputText value="#{row.Cp}"
+                                                                   shortDesc="#{bindings.AdresseVO3.hints.Cp.tooltip}"
+                                                                   id="ot6"/>
+                                                </af:column>
+                                                <af:column headerText="Gouvernorat" id="c8">
+                                                    <af:selectOneChoice value="#{row.bindings.Kstructureadr.inputValue}"
+                                                                        label="#{row.bindings.Kstructureadr.label}"
+                                                                        required="#{bindings.AdresseVO3.hints.Kstructureadr.mandatory}"
+                                                                        shortDesc="#{bindings.AdresseVO3.hints.Kstructureadr.tooltip}"
+                                                                        readOnly="true" id="soc4">
+                                                        <f:selectItems value="#{row.bindings.Kstructureadr.items}"
+                                                                       id="si4"/>
+                                                        <f:validator binding="#{row.bindings.Kstructureadr.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                            </af:table>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem id="tab6" text="Ajouter une adresse"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab6}">
+                                            <af:toolbar id="t8"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t8}">
+                                                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                           text="Ajouter"
+                                                           disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b1}"
+                                                           icon="#{resource['images:ajouter.png']}"/>
+                                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                                           disabled="#{!bindings.Commit.enabled}" id="b2"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b2}"
+                                                           icon="#{resource['images:commit.png']}"/>
+                                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                                           disabled="#{!bindings.Rollback.enabled}" immediate="true"
+                                                           id="b3"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b3}"
+                                                           icon="#{resource['images:rollback.png']}">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                            </af:toolbar>
+                                            <af:panelFormLayout id="pfl3"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pfl3}">
+                                                <af:panelLabelAndMessage label="ID adresse" id="plam1"
+                                                                         binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.plam1}">
+                                                    <af:outputText value="#{bindings.Kadresse.inputValue}"
+                                                                   shortDesc="#{bindings.Kadresse.hints.tooltip}"
+                                                                   id="ot5"
+                                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.ot5}">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Kadresse.format}"/>
+                                                    </af:outputText>
+                                                </af:panelLabelAndMessage>
+                                                <af:inputText value="#{bindings.Numrue.inputValue}"
+                                                              label="Numero de rue"
+                                                              required="#{bindings.Numrue.hints.mandatory}"
+                                                              columns="50"
+                                                              maximumLength="#{bindings.Numrue.hints.precision}"
+                                                              shortDesc="#{bindings.Numrue.hints.tooltip}" id="it8"
+                                                              binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it8}">
+                                                    <f:validator binding="#{bindings.Numrue.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Numrue.format}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.Rue.inputValue}" label="Rue"
+                                                              required="#{bindings.Rue.hints.mandatory}"
+                                                              columns="50"
+                                                              maximumLength="#{bindings.Rue.hints.precision}"
+                                                              shortDesc="#{bindings.Rue.hints.tooltip}" id="it9"
+                                                              binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it9}">
+                                                    <f:validator binding="#{bindings.Rue.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.Cp.inputValue}" label="Code postale"
+                                                              required="#{bindings.Cp.hints.mandatory}"
+                                                              columns="50"
+                                                              maximumLength="#{bindings.Cp.hints.precision}"
+                                                              shortDesc="#{bindings.Cp.hints.tooltip}" id="it10"
+                                                              binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it10}">
+                                                    <f:validator binding="#{bindings.Cp.validator}"/>
+                                                </af:inputText>
+                                                <af:selectOneChoice value="#{bindings.Kstructureadr.inputValue}"
+                                                                    label="#{bindings.Kstructureadr.label}"
+                                                                    required="#{bindings.Kstructureadr.hints.mandatory}"
+                                                                    shortDesc="#{bindings.Kstructureadr.hints.tooltip}"
+                                                                    id="soc8"
+                                                                    binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc8}">
+                                                    <f:selectItems value="#{bindings.Kstructureadr.items}" id="si8"
+                                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si8}"/>
+                                                    <f:validator binding="#{bindings.Kstructureadr.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:panelFormLayout>
+                                        </af:showDetailItem>
+                                    </af:panelTabbed>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab2" text="Compte Bancaire"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab2}">
+                                    <af:panelTabbed position="above" id="pt4"
+                                                    binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pt4}">
+                                        <af:showDetailItem id="tab7" text="Listes des comptes bancaires"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab7}">
+                                            <af:toolbar id="t2"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t2}">
+                                                <af:button text="Modifier" id="b4"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b4}"
+                                                           icon="#{resource['images:modifier.png']}">
+                                                    <af:showPopupBehavior popupId="::p2"/>
+                                                </af:button>
+                                                <af:button actionListener="#{bindings.Delete1.execute}" text="Supprimer"
+                                                           disabled="#{!bindings.Delete1.enabled}" id="b5"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b5}"
+                                                           icon="#{resource['images:supprimer.png']}"/>
+                                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                                           disabled="#{!bindings.Commit.enabled}" id="b6"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b6}"
+                                                           icon="#{resource['images:commit.png']}"/>
+                                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                                           disabled="#{!bindings.Rollback.enabled}" immediate="true"
+                                                           id="b15"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b15}"
+                                                           icon="#{resource['images:rollback.png']}">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                            </af:toolbar>
+                                            <af:table value="#{bindings.ComptebancaireVO2.collectionModel}" var="row"
+                                                      rows="#{bindings.ComptebancaireVO2.rangeSize}"
+                                                      emptyText="#{bindings.ComptebancaireVO2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      fetchSize="#{bindings.ComptebancaireVO2.rangeSize}" id="t9"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t9}"
+                                                      partialTriggers="::b5 ::b16">
+                                                <af:column headerText="ID compte bancaire" id="c5">
+                                                    <af:outputText value="#{row.Kcompte}"
+                                                                   shortDesc="#{bindings.ComptebancaireVO2.hints.Kcompte.tooltip}"
+                                                                   id="ot4">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ComptebancaireVO2.hints.Kcompte.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column headerText="Agence" id="c6">
+                                                    <af:selectOneChoice value="#{row.bindings.Kagence.inputValue}"
+                                                                        label="#{row.bindings.Kagence.label}"
+                                                                        required="#{bindings.ComptebancaireVO2.hints.Kagence.mandatory}"
+                                                                        shortDesc="#{bindings.ComptebancaireVO2.hints.Kagence.tooltip}"
+                                                                        readOnly="true" id="soc5">
+                                                        <f:selectItems value="#{row.bindings.Kagence.items}" id="si5"/>
+                                                        <f:validator binding="#{row.bindings.Kagence.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column headerText="Banque" id="c7">
+                                                    <af:selectOneChoice value="#{row.bindings.Kbanque.inputValue}"
+                                                                        label="#{row.bindings.Kbanque.label}"
+                                                                        required="#{bindings.ComptebancaireVO2.hints.Kbanque.mandatory}"
+                                                                        shortDesc="#{bindings.ComptebancaireVO2.hints.Kbanque.tooltip}"
+                                                                        readOnly="true" id="soc6">
+                                                        <f:selectItems value="#{row.bindings.Kbanque.items}" id="si6"/>
+                                                        <f:validator binding="#{row.bindings.Kbanque.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column headerText="RIB" id="c9">
+                                                    <af:outputText value="#{row.Rib}"
+                                                                   shortDesc="#{bindings.ComptebancaireVO2.hints.Rib.tooltip}"
+                                                                   id="ot8"/>
+                                                </af:column>
+                                            </af:table>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem id="tab8" text="Ajouter un compte bancaire"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab8}">
+                                            <af:toolbar id="t4"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t4}">
+                                                <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                           text="Ajouter"
+                                                           disabled="#{!bindings.CreateInsert1.enabled}" id="b16"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b16}"
+                                                           icon="#{resource['images:ajouter.png']}"/>
+                                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                                           disabled="#{!bindings.Commit.enabled}" id="b17"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b17}"
+                                                           icon="#{resource['images:commit.png']}"/>
+                                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                                           disabled="#{!bindings.Rollback.enabled}" immediate="true"
+                                                           id="b18"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b18}"
+                                                           icon="#{resource['images:rollback.png']}">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                            </af:toolbar>
+                                            <af:panelFormLayout id="pfl4"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pfl4}">
+                                                <af:panelLabelAndMessage label="ID compte bancaire" id="plam3"
+                                                                         binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.plam3}">
+                                                    <af:outputText value="#{bindings.Kcompte.inputValue}"
+                                                                   shortDesc="#{bindings.Kcompte.hints.tooltip}"
+                                                                   id="ot9"
+                                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.ot9}">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Kcompte.format}"/>
+                                                    </af:outputText>
+                                                </af:panelLabelAndMessage>
+                                                <af:selectOneChoice value="#{bindings.Kagence.inputValue}"
+                                                                    label="#{bindings.Kagence.label}"
+                                                                    required="#{bindings.Kagence.hints.mandatory}"
+                                                                    shortDesc="#{bindings.Kagence.hints.tooltip}"
+                                                                    id="soc9"
+                                                                    binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc9}">
+                                                    <f:selectItems value="#{bindings.Kagence.items}" id="si9"
+                                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si9}"/>
+                                                    <f:validator binding="#{bindings.Kagence.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:selectOneChoice value="#{bindings.Kbanque.inputValue}"
+                                                                    label="#{bindings.Kbanque.label}"
+                                                                    required="#{bindings.Kbanque.hints.mandatory}"
+                                                                    shortDesc="#{bindings.Kbanque.hints.tooltip}"
+                                                                    id="soc10"
+                                                                    binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc10}">
+                                                    <f:selectItems value="#{bindings.Kbanque.items}" id="si10"
+                                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si10}"/>
+                                                    <f:validator binding="#{bindings.Kbanque.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:inputText value="#{bindings.Rib.inputValue}" label="RIB"
+                                                              required="#{bindings.Rib.hints.mandatory}"
+                                                              columns="#{bindings.Rib.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Rib.hints.precision}"
+                                                              shortDesc="#{bindings.Rib.hints.tooltip}" id="it11"
+                                                              binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it11}">
+                                                    <f:validator binding="#{bindings.Rib.validator}"/>
+                                                </af:inputText>
+                                            </af:panelFormLayout>
+                                        </af:showDetailItem>
+                                    </af:panelTabbed>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab3" text="Actionnaires"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab3}">
+                                    <af:toolbar id="t5"
+                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t5}"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab4" text="Responsable"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.tab4}">
+                                    <af:toolbar id="t6"
+                                                binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.t6}"/>
+                                </af:showDetailItem>
+                            </af:panelTabbed>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:attribute name="NomPage" value="Consulter dossier contribuable"/>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.p2}" contentDelivery="immediate"
+                      partialTriggers="pt1:t9">
+                <af:panelWindow id="pw2" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pw2}">
+                    <af:panelFormLayout id="pfl5" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pfl5}">
+                        <af:panelLabelAndMessage label="ID compte bancaire" id="plam4"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.plam4}">
+                            <af:outputText value="#{bindings.Kcompte.inputValue}"
+                                           shortDesc="#{bindings.Kcompte.hints.tooltip}" id="ot10"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.ot10}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kcompte.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:selectOneChoice value="#{bindings.Kagence.inputValue}" label="#{bindings.Kagence.label}"
+                                            required="#{bindings.Kagence.hints.mandatory}"
+                                            shortDesc="#{bindings.Kagence.hints.tooltip}" id="soc11"
+                                            binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc11}">
+                            <f:selectItems value="#{bindings.Kagence.items}" id="si11"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si11}"/>
+                            <f:validator binding="#{bindings.Kagence.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.Kbanque.inputValue}" label="#{bindings.Kbanque.label}"
+                                            required="#{bindings.Kbanque.hints.mandatory}"
+                                            shortDesc="#{bindings.Kbanque.hints.tooltip}" id="soc12"
+                                            binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc12}">
+                            <f:selectItems value="#{bindings.Kbanque.items}" id="si12"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si12}"/>
+                            <f:validator binding="#{bindings.Kbanque.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.Rib.inputValue}" label="RIB"
+                                      required="#{bindings.Rib.hints.mandatory}"
+                                      columns="#{bindings.Rib.hints.displayWidth}"
+                                      maximumLength="#{bindings.Rib.hints.precision}"
+                                      shortDesc="#{bindings.Rib.hints.tooltip}" id="it12"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it12}">
+                            <f:validator binding="#{bindings.Rib.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b19"
+                                       binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b19}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.p1}" contentDelivery="immediate"
+                      partialTriggers="pt1:t1">
+                <af:panelWindow id="pw1" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pw1}">
+                    <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.pfl2}">
+                        <af:panelLabelAndMessage label="ID adresse" id="plam2"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.plam2}">
+                            <af:outputText value="#{bindings.Kadresse.inputValue}"
+                                           shortDesc="#{bindings.Kadresse.hints.tooltip}" id="ot7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.ot7}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kadresse.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.Numrue.inputValue}" label="Numero de rue"
+                                      required="#{bindings.Numrue.hints.mandatory}"
+                                      columns="#{bindings.Numrue.hints.displayWidth}"
+                                      maximumLength="#{bindings.Numrue.hints.precision}"
+                                      shortDesc="#{bindings.Numrue.hints.tooltip}" id="it5"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it5}">
+                            <f:validator binding="#{bindings.Numrue.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Numrue.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Rue.inputValue}" label="Rue"
+                                      required="#{bindings.Rue.hints.mandatory}"
+                                      columns="#{bindings.Rue.hints.displayWidth}"
+                                      maximumLength="#{bindings.Rue.hints.precision}"
+                                      shortDesc="#{bindings.Rue.hints.tooltip}" id="it6"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it6}">
+                            <f:validator binding="#{bindings.Rue.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Cp.inputValue}" label="Code postale"
+                                      required="#{bindings.Cp.hints.mandatory}"
+                                      columns="#{bindings.Cp.hints.displayWidth}"
+                                      maximumLength="#{bindings.Cp.hints.precision}"
+                                      shortDesc="#{bindings.Cp.hints.tooltip}" id="it7"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.it7}">
+                            <f:validator binding="#{bindings.Cp.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.Kstructureadr.inputValue}"
+                                            label="#{bindings.Kstructureadr.label}"
+                                            required="#{bindings.Kstructureadr.hints.mandatory}"
+                                            shortDesc="#{bindings.Kstructureadr.hints.tooltip}" id="soc7"
+                                            binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.soc7}">
+                            <f:selectItems value="#{bindings.Kstructureadr.items}" id="si7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.si7}"/>
+                            <f:validator binding="#{bindings.Kstructureadr.validator}"/>
+                        </af:selectOneChoice>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b10"
+                                       binding="#{backingBeanScope.backing_jsfFlder_ConsulterDossier.b10}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_ConsulterDossier-->
+</f:view>

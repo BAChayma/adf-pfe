@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource id="__1">/WEB-INF/Menu.xml</metadata-resource>
+  <managed-bean id="__2">
+    <managed-bean-name>backing_jsfFlder_untitled1</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Untitled1</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/untitled1.jspx-->
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>backing_jsfFlder_untitled2</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Untitled2</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/untitled2.jsf-->
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>backing_jsfFlder_Connexion</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Connexion</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Connexion.jsf-->
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>backing_jsfFlder_Inscription</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Inscription</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Inscription.jsf-->
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_jsfFlder_Home</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Home</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Home.jsf-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>backing_jsfFlder_InscriptionContribuable</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.InscriptionContribuable</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/InscriptionContribuable.jsf-->
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>backing_jsfFlder_Responsable</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Responsable</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Responsable.jsf-->
+  </managed-bean>
+</adfc-config>

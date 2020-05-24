@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AGENCEAM"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="AdresseVO1"
+    ViewObjectName="model.VO.AdresseVO"/>
+  <ViewUsage
+    Name="AgenceVO1"
+    ViewObjectName="model.VO.AgenceVO"/>
+  <ViewUsage
+    Name="AgenceVO2"
+    ViewObjectName="model.VO.AgenceVO"/>
+  <ViewUsage
+    Name="AdresseVO2"
+    ViewObjectName="model.VO.AdresseVO"/>
+  <ViewLinkUsage
+    Name="SysC0014189Link"
+    ViewLinkObjectName="model.VO.SysC0014189Link"
+    SrcViewUsageName="model.AM.AGENCEAM.AdresseVO1"
+    DstViewUsageName="model.AM.AGENCEAM.AgenceVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AgenceAdresseVL1"
+    ViewLinkObjectName="model.VL.AgenceAdresseVL"
+    SrcViewUsageName="model.AM.AGENCEAM.AgenceVO2"
+    DstViewUsageName="model.AM.AGENCEAM.AdresseVO2"
+    Reversed="false"/>
+</AppModule>

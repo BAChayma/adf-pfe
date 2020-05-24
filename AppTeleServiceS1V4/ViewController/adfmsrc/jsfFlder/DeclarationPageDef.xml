@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="DeclarationPageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContribuableVO1" RangeSize="25" DataControl="ContribuableAMDataControl"
+              id="ContribuableVO1Iterator"/>
+    <searchRegion Criteria="ContribuableVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContribuableVO1Iterator" id="ContribuableVOCriteriaQuery"/>
+    <iterator Binds="DeclarationVO2" RangeSize="25" DataControl="ContribuableAMDataControl"
+              id="DeclarationVO2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Nomcommerciale">
+      <AttrNames>
+        <Item Value="Nomcommerciale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Raisonsociale">
+      <AttrNames>
+        <Item Value="Raisonsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Datedebexp">
+      <AttrNames>
+        <Item Value="Datedebexp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Capitalsociale">
+      <AttrNames>
+        <Item Value="Capitalsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Registrecommerce">
+      <AttrNames>
+        <Item Value="Registrecommerce"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_Kformjuri" id="Kformjuri"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_activiteEse" id="activiteEse"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_nationnalite" id="nationnalite"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="DeclarationVO2Iterator" id="DeclarationVO2">
+      <nodeDefinition DefName="model.VO.DeclarationVO" Name="DeclarationVO20">
+        <AttrNames>
+          <Item Value="Kdcl"/>
+          <Item Value="Kimpot"/>
+          <Item Value="Mantantdeclarer"/>
+          <Item Value="Mantantdeclaration"/>
+          <Item Value="Datedcl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="DeclarationVO2Iterator" id="Kdcl">
+      <AttrNames>
+        <Item Value="Kdcl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DeclarationVO2Iterator" id="Mantantdeclaration">
+      <AttrNames>
+        <Item Value="Mantantdeclaration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DeclarationVO2Iterator" id="Datedcl">
+      <AttrNames>
+        <Item Value="Datedcl"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="DeclarationVO2Iterator" StaticList="false" Uses="LOV_Kimpot" id="Kimpot"/>
+    <action IterBinding="DeclarationVO2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="DeclarationVO2Iterator" id="impot">
+      <AttrNames>
+        <Item Value="impot"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DeclarationVO2Iterator" id="taux">
+      <AttrNames>
+        <Item Value="taux"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ContribuableAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ContribuableAMDataControl"/>
+    <attributeValues IterBinding="DeclarationVO2Iterator" id="Mantantdeclarer">
+      <AttrNames>
+        <Item Value="Mantantdeclarer"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

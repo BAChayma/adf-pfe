@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Contribuable">
+    <page>/jsfFlder/Contribuable.jsf</page>
+  </view>
+  <view id="Declaration">
+    <page>/jsfFlder/Declaration.jsf</page>
+  </view>
+  <view id="Reclamation">
+    <page>/jsfFlder/Reclamation.jsf</page>
+  </view>
+  <view id="Paiement">
+    <page>/jsfFlder/Paiement.jsf</page>
+  </view>
+  <view id="ConsulterDossier">
+    <page>/jsfFlder/ConsulterDossier.jsf</page>
+  </view>
+  <view id="Administration">
+    <page>/jsfFlder/Administration.jsf</page>
+  </view>
+  <view id="ActiviteEntreprise">
+    <page>/jsfFlder/ActiviteEntreprise.jsf</page>
+  </view>
+  <view id="FormeJuridique">
+    <page>/jsfFlder/FormeJuridique.jsf</page>
+  </view>
+  <view id="ModePaiement">
+    <page>/jsfFlder/ModePaiement.jsf</page>
+  </view>
+  <view id="Banque">
+    <page>/jsfFlder/Banque.jsf</page>
+  </view>
+  <view id="Agence">
+    <page>/jsfFlder/Agence.jsf</page>
+  </view>
+  <view id="Pays">
+    <page>/jsfFlder/Pays.jsf</page>
+  </view>
+  <view id="Impot">
+    <page>/jsfFlder/Impot.jsf</page>
+  </view>
+  <view id="StructPrivi"></view>
+  <view id="StructAdr"></view>
+  <view id="TypeStructPrivi"></view>
+  <view id="TypeStructAdr"></view>
+  <control-flow-rule id="__3">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>Contribuable</from-outcome>
+      <to-activity-id>Contribuable</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>Declaration</from-outcome>
+      <to-activity-id>Declaration</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>ConsulterDossier</from-outcome>
+      <to-activity-id>ConsulterDossier</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>Paiement</from-outcome>
+      <to-activity-id>Paiement</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>Reclamation</from-outcome>
+      <to-activity-id>Reclamation</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__11">
+      <from-outcome>Administration</from-outcome>
+      <to-activity-id>Administration</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__12">
+      <from-outcome>ActiviteEntreprise</from-outcome>
+      <to-activity-id>ActiviteEntreprise</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>FormeJuridique</from-outcome>
+      <to-activity-id>FormeJuridique</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__14">
+      <from-outcome>Agence</from-outcome>
+      <to-activity-id>Agence</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__15">
+      <from-outcome>Pays</from-outcome>
+      <to-activity-id>Pays</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__16">
+      <from-outcome>ModePaiement</from-outcome>
+      <to-activity-id>ModePaiement</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__17">
+      <from-outcome>TypeStructAdr</from-outcome>
+      <to-activity-id>TypeStructAdr</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__18">
+      <from-outcome>Impot</from-outcome>
+      <to-activity-id>Impot</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__19">
+      <from-outcome>Banque</from-outcome>
+      <to-activity-id>Banque</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__20">
+      <from-outcome>StructPrivi</from-outcome>
+      <to-activity-id>StructPrivi</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__21">
+      <from-outcome>SructAdr</from-outcome>
+      <to-activity-id>StructAdr</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__22">
+      <from-outcome>TypeStrucPrivi</from-outcome>
+      <to-activity-id>TypeStructPrivi</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__23">
+    <description>Menu Model Managed Bean</description>
+    <managed-bean-name>App_menu</managed-bean-name>
+    <managed-bean-class>oracle.adf.view.rich.model.MDSMenuModel</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__24">
+      <property-name>createHiddenNodes</property-name>
+      <value>false</value>
+    </managed-property>
+    <managed-property id="__25">
+      <property-name>source</property-name>
+      <property-class>java.lang.String</property-class>
+      <value>/WEB-INF/App_menu.xml</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__26">
+    <managed-bean-name>backing_ConsulterDossier</managed-bean-name>
+    <managed-bean-class>view.backing.ConsulterDossier</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1ConsulterDossier.jspx-->
+  </managed-bean>
+  <managed-bean id="__27">
+    <managed-bean-name>backing_ConsulterDossier2</managed-bean-name>
+    <managed-bean-class>view.backing.ConsulterDossier</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1ConsulterDossier.jsf-->
+  </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name>backing_jsfFlder_ConsulterDossier</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.ConsulterDossier</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/ConsulterDossier.jsf-->
+  </managed-bean>
+  <managed-bean id="__29">
+    <managed-bean-name>backing_jsfFlder_Contribuable</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Contribuable</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Contribuable.jsf-->
+  </managed-bean>
+  <managed-bean id="__30">
+    <managed-bean-name>backing_jsfFlder_Declaration</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Declaration</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Declaration.jsf-->
+  </managed-bean>
+  <managed-bean id="__31">
+    <managed-bean-name>backing_jsfFlder_Paiement</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Paiement</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Paiement.jsf-->
+  </managed-bean>
+  <managed-bean id="__32">
+    <managed-bean-name>backing_jsfFlder_Reclamation</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Reclamation</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Reclamation.jsf-->
+  </managed-bean>
+  <managed-bean id="__1">
+    <managed-bean-name>backing_jsfFlder_Administration</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Administration</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Administration.jsf-->
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>backing_jsfFlder_ActiviteEntreprise</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.ActiviteEntreprise</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/ActiviteEntreprise.jsf-->
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>backing_jsfFlder_FormeJuridique</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.FormeJuridique</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/FormeJuridique.jsf-->
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_jsfFlder_Agence</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Agence</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Agence.jsf-->
+  </managed-bean>
+  <managed-bean id="__33">
+    <managed-bean-name>backing_jsfFlder_Banque</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Banque</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Banque.jsf-->
+  </managed-bean>
+  <managed-bean id="__34">
+    <managed-bean-name>backing_jsfFlder_Impot</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Impot</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Impot.jsf-->
+  </managed-bean>
+  <managed-bean id="__35">
+    <managed-bean-name>backing_jsfFlder_ModePaiement</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.ModePaiement</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/ModePaiement.jsf-->
+  </managed-bean>
+  <managed-bean id="__36">
+    <managed-bean-name>backing_jsfFlder_Pays</managed-bean-name>
+    <managed-bean-class>view.backing.jsfFlder.Pays</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsfFlder/Pays.jsf-->
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>templateDefv5</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>bodyfacet</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>NomPage</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+                <afc:default-value>Nom de la page</afc:default-value>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelSplitter orientation="vertical" splitterPosition="50" id="pt_ps1">
+        <f:facet name="first"/>
+        <f:facet name="second">
+            <af:panelStretchLayout id="pt_psl1">
+                <f:facet name="bottom"/>
+                <f:facet name="center">
+                    <af:decorativeBox id="pt_db1">
+                        <f:facet name="center">
+                            <af:facetRef facetName="bodyfacet"/>
+                        </f:facet>
+                        <f:facet name="top">
+                            <af:navigationPane hint="bar" id="pt_np2" inlineStyle="background-color:ActiveCaption;"
+                                               level="1" value="#{App_menu}" var="xyz">
+                                <f:facet name="nodeStamp">
+                                    <af:commandNavigationItem id="ni2" text="#{xyz.label}" action="#{xyz.doAction}"/>
+                                </f:facet>
+                            </af:navigationPane>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top">
+                    <af:panelHeader text="#{attrs.NomPage}" id="pt_ph1" inlineStyle="background-color:ActiveCaption;">
+                        <f:facet name="context"/>
+                        <f:facet name="menuBar">
+                            <af:navigationPane hint="bar" id="pt_np1" value="#{App_menu}" var="abc">
+                                <f:facet name="nodeStamp">
+                                    <af:commandNavigationItem id="ni1" text="#{abc.label}" action="#{abc.doAction}"/>
+                                </f:facet>
+                            </af:navigationPane>
+                        </f:facet>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="legend"/>
+                        <f:facet name="info"/>
+                    </af:panelHeader>
+                </f:facet>
+            </af:panelStretchLayout>
+        </f:facet>
+    </af:panelSplitter>
+</af:pageTemplateDef>

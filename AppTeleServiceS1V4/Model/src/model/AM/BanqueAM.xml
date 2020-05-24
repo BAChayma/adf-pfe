@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BanqueAM"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="BanqueVO1"
+    ViewObjectName="model.VO.BanqueVO"/>
+  <ViewUsage
+    Name="AgenceVO2"
+    ViewObjectName="model.VO.AgenceVO"/>
+  <ViewUsage
+    Name="AdresseVO2"
+    ViewObjectName="model.VO.AdresseVO"/>
+  <ViewUsage
+    Name="AdresseVO1"
+    ViewObjectName="model.VO.AdresseVO"/>
+  <ViewLinkUsage
+    Name="BanqueAgenceVL1"
+    ViewLinkObjectName="model.VL.BanqueAgenceVL"
+    SrcViewUsageName="model.AM.BanqueAM.BanqueVO1"
+    DstViewUsageName="model.AM.BanqueAM.AgenceVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="BanqueAdresseVL1"
+    ViewLinkObjectName="model.VL.BanqueAdresseVL"
+    SrcViewUsageName="model.AM.BanqueAM.BanqueVO1"
+    DstViewUsageName="model.AM.BanqueAM.AdresseVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AgenceAdresseVL1"
+    ViewLinkObjectName="model.VL.AgenceAdresseVL"
+    SrcViewUsageName="model.AM.BanqueAM.AgenceVO2"
+    DstViewUsageName="model.AM.BanqueAM.AdresseVO1"
+    Reversed="false"/>
+</AppModule>

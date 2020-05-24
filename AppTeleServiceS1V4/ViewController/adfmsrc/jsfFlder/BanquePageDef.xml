@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="BanquePageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BanqueVO1" RangeSize="25" DataControl="BanqueAMDataControl" id="BanqueVO1Iterator"/>
+    <iterator Binds="AdresseVO2" RangeSize="25" DataControl="BanqueAMDataControl" id="AdresseVO2Iterator"/>
+    <searchRegion Criteria="BanqueVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BanqueVO1Iterator" id="BanqueVOCriteriaQuery"/>
+    <iterator Binds="AgenceVO2" RangeSize="25" DataControl="BanqueAMDataControl" id="AgenceVO2Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="BanqueVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="BanqueAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="BanqueAMDataControl"/>
+    <tree IterBinding="BanqueVO1Iterator" id="BanqueVO1">
+      <nodeDefinition DefName="model.VO.BanqueVO" Name="BanqueVO10">
+        <AttrNames>
+          <Item Value="Kbanque"/>
+          <Item Value="Nombanque"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BanqueVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="BanqueVO1Iterator" id="Kbanque">
+      <AttrNames>
+        <Item Value="Kbanque"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BanqueVO1Iterator" id="Nombanque">
+      <AttrNames>
+        <Item Value="Nombanque"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AdresseVO2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="AdresseVO2Iterator" id="Kadresse">
+      <AttrNames>
+        <Item Value="Kadresse"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO2Iterator" id="Numrue">
+      <AttrNames>
+        <Item Value="Numrue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO2Iterator" id="Rue">
+      <AttrNames>
+        <Item Value="Rue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO2Iterator" id="Cp">
+      <AttrNames>
+        <Item Value="Cp"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdresseVO2Iterator" StaticList="false" Uses="LOV_Kstructureadr" id="Kstructureadr"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="AgenceVO2Iterator" id="AgenceVO2">
+      <nodeDefinition DefName="model.VO.AgenceVO" Name="AgenceVO20">
+        <AttrNames>
+          <Item Value="Kagence"/>
+          <Item Value="Libelleagence"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

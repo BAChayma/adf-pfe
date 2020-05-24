@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ActiviteEntreprise.jsf" id="d1"
+                 binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.f1}">
+           <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Contribuable.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelTabbed position="above" id="pt2"
+                                    binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.pt2}">
+                        <af:showDetailItem id="tab1" text="Liste des activites des entreprises"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.tab1}">
+                            <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.t2}">
+                                <af:button text="Modifier" id="b4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b4}"
+                                           icon="#{resource['images:modifier.png']}">
+                                    <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                           disabled="#{!bindings.Delete.enabled}" id="b5"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b5}"
+                                           icon="#{resource['images:supprimer.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b6"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b6}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b7}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:table value="#{bindings.ActiviteentrepriseVO1.collectionModel}" var="row"
+                                      rows="#{bindings.ActiviteentrepriseVO1.rangeSize}"
+                                      emptyText="#{bindings.ActiviteentrepriseVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.ActiviteentrepriseVO1.rangeSize}"
+                                      id="t1" binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.t1}"
+                                      partialTriggers="::b1 ::b5">
+                                <af:column headerText="#{bindings.ActiviteentrepriseVO1.hints.Kactent.label}" id="c1">
+                                    <af:outputText value="#{row.Kactent}"
+                                                   shortDesc="#{bindings.ActiviteentrepriseVO1.hints.Kactent.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ActiviteentrepriseVO1.hints.Kactent.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.ActiviteentrepriseVO1.hints.Libelleae.label}" id="c2">
+                                    <af:outputText value="#{row.Libelleae}"
+                                                   shortDesc="#{bindings.ActiviteentrepriseVO1.hints.Libelleae.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Ajouter une activite d'entreprise"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.tab2}">
+                            <af:toolbar id="t3" binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.t3}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b1}"
+                                           icon="#{resource['images:ajouter.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b2}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b3"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b3}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:panelFormLayout id="pfl1"
+                                                binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.pfl1}">
+                                <af:panelLabelAndMessage label="ID activite d'entreprise" id="plam1"
+                                                         binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.plam1}">
+                                    <af:outputText value="#{bindings.Kactent.inputValue}"
+                                                   shortDesc="#{bindings.Kactent.hints.tooltip}" id="ot3"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.ot3}">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Kactent.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.Libelleae.inputValue}"
+                                              label="Libelle activite d'entreprise"
+                                              required="#{bindings.Libelleae.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Libelleae.hints.precision}"
+                                              shortDesc="#{bindings.Libelleae.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.it1}">
+                                    <f:validator binding="#{bindings.Libelleae.validator}"/>
+                                </af:inputText>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.p1}" partialTriggers="pt1:t1"
+                      contentDelivery="immediate">
+                <af:panelWindow id="pw1" binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.pw1}">
+                    <af:panelFormLayout id="pfl2"
+                                        binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.pfl2}">
+                        <af:panelLabelAndMessage label="ID activite d'entreprise" id="plam2"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.plam2}">
+                            <af:outputText value="#{bindings.Kactent.inputValue}"
+                                           shortDesc="#{bindings.Kactent.hints.tooltip}" id="ot4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.ot4}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kactent.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.Libelleae.inputValue}" label="Libelle activite d'entreprise"
+                                      required="#{bindings.Libelleae.hints.mandatory}"
+                                      columns="#{bindings.Libelleae.hints.displayWidth}"
+                                      maximumLength="#{bindings.Libelleae.hints.precision}"
+                                      shortDesc="#{bindings.Libelleae.hints.tooltip}" id="it2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.it2}">
+                            <f:validator binding="#{bindings.Libelleae.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b8"
+                                       binding="#{backingBeanScope.backing_jsfFlder_ActiviteEntreprise.b8}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_ActiviteEntreprise-->
+</f:view>

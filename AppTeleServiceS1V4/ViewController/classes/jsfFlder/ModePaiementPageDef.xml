@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ModePaiementPageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ModepaiementVO1" RangeSize="25" DataControl="ModepaiementAMDataControl"
+              id="ModepaiementVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ModepaiementVO1Iterator" id="Kmodepaiement">
+      <AttrNames>
+        <Item Value="Kmodepaiement"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ModepaiementVO1Iterator" id="Libelle">
+      <AttrNames>
+        <Item Value="Libelle"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ModepaiementVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ModepaiementVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ModepaiementAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ModepaiementAMDataControl"/>
+    <tree IterBinding="ModepaiementVO1Iterator" id="ModepaiementVO1">
+      <nodeDefinition DefName="model.VO.ModepaiementVO" Name="ModepaiementVO10">
+        <AttrNames>
+          <Item Value="Kmodepaiement"/>
+          <Item Value="Libelle"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

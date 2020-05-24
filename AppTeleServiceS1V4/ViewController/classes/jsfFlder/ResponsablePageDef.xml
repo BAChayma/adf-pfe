@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ResponsablePageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PersonneVO2" RangeSize="25" DataControl="ContribuableAMDataControl" id="PersonneVO2Iterator"/>
+    <iterator Binds="AdresseVO1" RangeSize="25" DataControl="PersonneAMDataControl" id="AdresseVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PersonneVO2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ContribuableAMDataControl"/>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Kper">
+      <AttrNames>
+        <Item Value="Kper"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Kcnc">
+      <AttrNames>
+        <Item Value="Kcnc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Identifiant">
+      <AttrNames>
+        <Item Value="Identifiant"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Nom">
+      <AttrNames>
+        <Item Value="Nom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Prenom">
+      <AttrNames>
+        <Item Value="Prenom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Tel">
+      <AttrNames>
+        <Item Value="Tel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonneVO2Iterator" id="Qualite">
+      <AttrNames>
+        <Item Value="Qualite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Kadresse">
+      <AttrNames>
+        <Item Value="Kadresse"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Numrue">
+      <AttrNames>
+        <Item Value="Numrue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Rue">
+      <AttrNames>
+        <Item Value="Rue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO1Iterator" id="Cp">
+      <AttrNames>
+        <Item Value="Cp"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdresseVO1Iterator" StaticList="false" Uses="LOV_Kstructureadr" id="Kstructureadr"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="AdresseVO1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

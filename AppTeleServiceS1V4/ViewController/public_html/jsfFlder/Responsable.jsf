@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Responsable.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.f1}">
+            <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.psl1}">
+                <f:facet name="bottom">
+                    <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_Responsable.t2}">
+                        <af:spacer width="400" height="10" id="s1"
+                                   binding="#{backingBeanScope.backing_jsfFlder_Responsable.s1}"/>
+                        <af:button text="Terminer" id="b3"
+                                   binding="#{backingBeanScope.backing_jsfFlder_Responsable.b3}"
+                                   action="#{backingBeanScope.backing_jsfFlder_Responsable.Terminer_action}"/>
+                    </af:toolbar>
+                </f:facet>
+                <f:facet name="center">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.ps1}"
+                                      orientation="vertical" splitterPosition="215">
+                        <f:facet name="first">
+                            <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.db1}">
+                                <f:facet name="center">
+                                    <af:panelFormLayout id="pfl1"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_Responsable.pfl1}">
+                                        <af:panelLabelAndMessage label="ID personne" id="plam1"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Responsable.plam1}">
+                                            <af:outputText value="#{bindings.Kper.inputValue}"
+                                                           shortDesc="#{bindings.Kper.hints.tooltip}" id="ot1"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Responsable.ot1}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Kper.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="ID contribuable" id="plam2"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Responsable.plam2}">
+                                            <af:outputText value="#{bindings.Kcnc.inputValue}"
+                                                           shortDesc="#{bindings.Kcnc.hints.tooltip}" id="ot2"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Responsable.ot2}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Kcnc.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:inputText value="#{bindings.Identifiant.inputValue}" label="Identifiant"
+                                                      required="#{bindings.Identifiant.hints.mandatory}"
+                                                      columns="#{bindings.Identifiant.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Identifiant.hints.precision}"
+                                                      shortDesc="#{bindings.Identifiant.hints.tooltip}" id="it1"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it1}">
+                                            <f:validator binding="#{bindings.Identifiant.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Nom.inputValue}" label="Nom"
+                                                      required="#{bindings.Nom.hints.mandatory}"
+                                                      columns="#{bindings.Nom.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Nom.hints.precision}"
+                                                      shortDesc="#{bindings.Nom.hints.tooltip}" id="it2"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it2}">
+                                            <f:validator binding="#{bindings.Nom.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Prenom.inputValue}" label="Prenom"
+                                                      required="#{bindings.Prenom.hints.mandatory}"
+                                                      columns="#{bindings.Prenom.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Prenom.hints.precision}"
+                                                      shortDesc="#{bindings.Prenom.hints.tooltip}" id="it3"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it3}">
+                                            <f:validator binding="#{bindings.Prenom.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Tel.inputValue}" label="Telephone"
+                                                      required="#{bindings.Tel.hints.mandatory}"
+                                                      columns="#{bindings.Tel.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Tel.hints.precision}"
+                                                      shortDesc="#{bindings.Tel.hints.tooltip}" id="it4"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it4}">
+                                            <f:validator binding="#{bindings.Tel.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Email.inputValue}" label="Email"
+                                                      required="#{bindings.Email.hints.mandatory}"
+                                                      columns="#{bindings.Email.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Email.hints.precision}"
+                                                      shortDesc="#{bindings.Email.hints.tooltip}" id="it5"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it5}">
+                                            <f:validator binding="#{bindings.Email.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="Responsable" label="Qualite"
+                                                      required="#{bindings.Qualite.hints.mandatory}"
+                                                      columns="#{bindings.Qualite.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Qualite.hints.precision}"
+                                                      shortDesc="#{bindings.Qualite.hints.tooltip}" id="it6"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it6}">
+                                            <f:validator binding="#{bindings.Qualite.validator}"/>
+                                        </af:inputText>
+                                    </af:panelFormLayout>
+                                </f:facet>
+                                <f:facet name="top">
+                                    <af:toolbar id="t1" binding="#{backingBeanScope.backing_jsfFlder_Responsable.t1}">
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Responsable.b1}"/>
+                                        <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                                   disabled="#{!bindings.Commit.enabled}" id="b2"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Responsable.b2}"/>
+                                    </af:toolbar>
+                                </f:facet>
+                            </af:decorativeBox>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:decorativeBox id="db2" binding="#{backingBeanScope.backing_jsfFlder_Responsable.db2}">
+                                <f:facet name="center">
+                                    <af:panelFormLayout id="pfl2"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_Responsable.pfl2}">
+                                        <af:panelLabelAndMessage label="ID adresse" id="plam3"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Responsable.plam3}">
+                                            <af:outputText value="#{bindings.Kadresse.inputValue}"
+                                                           shortDesc="#{bindings.Kadresse.hints.tooltip}" id="ot3"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Responsable.ot3}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Kadresse.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:inputText value="#{bindings.Numrue.inputValue}" label="Numero rue"
+                                                      required="#{bindings.Numrue.hints.mandatory}"
+                                                      columns="#{bindings.Numrue.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Numrue.hints.precision}"
+                                                      shortDesc="#{bindings.Numrue.hints.tooltip}" id="it7"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it7}">
+                                            <f:validator binding="#{bindings.Numrue.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Numrue.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Rue.inputValue}" label="Rue"
+                                                      required="#{bindings.Rue.hints.mandatory}"
+                                                      columns="#{bindings.Rue.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Rue.hints.precision}"
+                                                      shortDesc="#{bindings.Rue.hints.tooltip}" id="it8"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it8}">
+                                            <f:validator binding="#{bindings.Rue.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Cp.inputValue}" label="Code postale"
+                                                      required="#{bindings.Cp.hints.mandatory}"
+                                                      columns="#{bindings.Cp.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Cp.hints.precision}"
+                                                      shortDesc="#{bindings.Cp.hints.tooltip}" id="it9"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Responsable.it9}">
+                                            <f:validator binding="#{bindings.Cp.validator}"/>
+                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.Kstructureadr.inputValue}"
+                                                            label="#{bindings.Kstructureadr.label}"
+                                                            required="#{bindings.Kstructureadr.hints.mandatory}"
+                                                            shortDesc="#{bindings.Kstructureadr.hints.tooltip}"
+                                                            id="soc1"
+                                                            binding="#{backingBeanScope.backing_jsfFlder_Responsable.soc1}">
+                                            <f:selectItems value="#{bindings.Kstructureadr.items}" id="si1"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Responsable.si1}"/>
+                                            <f:validator binding="#{bindings.Kstructureadr.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:panelFormLayout>
+                                </f:facet>
+                                <f:facet name="top">
+                                    <af:toolbar id="t3" binding="#{backingBeanScope.backing_jsfFlder_Responsable.t3}">
+                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                   text="Ajouter" disabled="#{!bindings.CreateInsert1.enabled}"
+                                                   id="b4"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Responsable.b4}"/>
+                                    </af:toolbar>
+                                </f:facet>
+                            </af:decorativeBox>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top"/>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Responsable-->
+</f:view>

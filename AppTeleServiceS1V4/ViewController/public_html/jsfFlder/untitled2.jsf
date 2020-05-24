@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="untitled2.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_untitled2.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_untitled2.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_untitled2.f1}">
+        </af:form>
+        <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_jsfFlder_untitled2.pfl1}">
+            <af:inputText value="#{bindings.Kactent.inputValue}" label="#{bindings.Kactent.hints.label}"
+                          required="#{bindings.Kactent.hints.mandatory}"
+                          columns="#{bindings.Kactent.hints.displayWidth}"
+                          maximumLength="#{bindings.Kactent.hints.precision}"
+                          shortDesc="#{bindings.Kactent.hints.tooltip}" id="it1"
+                          binding="#{backingBeanScope.backing_jsfFlder_untitled2.it1}">
+                <f:validator binding="#{bindings.Kactent.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kactent.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Libelleae.inputValue}" label="#{bindings.Libelleae.hints.label}"
+                          required="#{bindings.Libelleae.hints.mandatory}"
+                          columns="#{bindings.Libelleae.hints.displayWidth}"
+                          maximumLength="#{bindings.Libelleae.hints.precision}"
+                          shortDesc="#{bindings.Libelleae.hints.tooltip}" id="it2"
+                          binding="#{backingBeanScope.backing_jsfFlder_untitled2.it2}">
+                <f:validator binding="#{bindings.Libelleae.validator}"/>
+            </af:inputText>
+        </af:panelFormLayout>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_untitled2-->
+</f:view>

@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Pays.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Pays.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_Pays.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Pays.f1}">
+            <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Pays.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelTabbed position="above" id="pt2" binding="#{backingBeanScope.backing_jsfFlder_Pays.pt2}">
+                        <af:showDetailItem id="tab1" text="Liste des pays"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.tab1}">
+                            <af:toolbar id="t1" binding="#{backingBeanScope.backing_jsfFlder_Pays.t1}">
+                                <af:button text="Modifier" id="b3"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b3}"
+                                           icon="#{resource['images:modifier.png']}">
+                                    <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                           disabled="#{!bindings.Delete.enabled}" id="b4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b4}"
+                                           icon="#{resource['images:supprimer.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b5"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b5}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b6"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b6}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:table value="#{bindings.PaysVO2.collectionModel}" var="row"
+                                      rows="#{bindings.PaysVO2.rangeSize}"
+                                      emptyText="#{bindings.PaysVO2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.PaysVO2.rangeSize}" id="t3"
+                                      partialTriggers="::b4 ::b2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Pays.t3}">
+                                <af:column headerText="ID pays" id="c1">
+                                    <af:outputText value="#{row.Kpays}"
+                                                   shortDesc="#{bindings.PaysVO2.hints.Kpays.tooltip}" id="ot2">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.PaysVO2.hints.Kpays.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Pays" id="c2">
+                                    <af:outputText value="#{row.Pays}"
+                                                   shortDesc="#{bindings.PaysVO2.hints.Pays.tooltip}" id="ot3"/>
+                                </af:column>
+                                <af:column headerText="Nationnalite" id="c3">
+                                    <af:outputText value="#{row.Nationnalite}"
+                                                   shortDesc="#{bindings.PaysVO2.hints.Nationnalite.tooltip}" id="ot4"/>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Ajouter une pays"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.tab2}">
+                            <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_Pays.t2}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b2}"
+                                           icon="#{resource['images:ajouter.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b7}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b8"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.b8}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_jsfFlder_Pays.pfl2}">
+                                <af:panelLabelAndMessage label="ID pays" id="plam2"
+                                                         binding="#{backingBeanScope.backing_jsfFlder_Pays.plam2}">
+                                    <af:outputText value="#{bindings.Kpays.inputValue}"
+                                                   shortDesc="#{bindings.Kpays.hints.tooltip}" id="ot5"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Pays.ot5}">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Kpays.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.Pays.inputValue}" label="Pays"
+                                              required="#{bindings.Pays.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Pays.hints.precision}"
+                                              shortDesc="#{bindings.Pays.hints.tooltip}" id="it3"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Pays.it3}">
+                                    <f:validator binding="#{bindings.Pays.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Nationnalite.inputValue}" label="Nationnalite"
+                                              required="#{bindings.Nationnalite.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Nationnalite.hints.precision}"
+                                              shortDesc="#{bindings.Nationnalite.hints.tooltip}" id="it4"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Pays.it4}">
+                                    <f:validator binding="#{bindings.Nationnalite.validator}"/>
+                                </af:inputText>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{backingBeanScope.backing_jsfFlder_Pays.p1}">
+                <af:panelWindow id="pw1" binding="#{backingBeanScope.backing_jsfFlder_Pays.pw1}">
+                    <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_jsfFlder_Pays.pfl1}">
+                        <af:panelLabelAndMessage label="ID pays" id="plam1"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_Pays.plam1}">
+                            <af:outputText value="#{bindings.Kpays.inputValue}"
+                                           shortDesc="#{bindings.Kpays.hints.tooltip}" id="ot1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Pays.ot1}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kpays.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.Pays.inputValue}" label="Pays"
+                                      required="#{bindings.Pays.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Pays.hints.precision}"
+                                      shortDesc="#{bindings.Pays.hints.tooltip}" id="it1"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Pays.it1}">
+                            <f:validator binding="#{bindings.Pays.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Nationnalite.inputValue}" label="Nationnalite"
+                                      required="#{bindings.Nationnalite.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Nationnalite.hints.precision}"
+                                      shortDesc="#{bindings.Nationnalite.hints.tooltip}" id="it2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Pays.it2}">
+                            <f:validator binding="#{bindings.Nationnalite.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b1" binding="#{backingBeanScope.backing_jsfFlder_Pays.b1}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Pays-->
+</f:view>

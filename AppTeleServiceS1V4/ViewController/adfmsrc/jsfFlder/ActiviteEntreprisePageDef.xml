@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ActiviteEntreprisePageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ActiviteentrepriseVO1" RangeSize="25" DataControl="ActiviteentrepriseAMDataControl"
+              id="ActiviteentrepriseVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ActiviteentrepriseVO1Iterator" id="ActiviteentrepriseVO1">
+      <nodeDefinition DefName="model.VO.ActiviteentrepriseVO" Name="ActiviteentrepriseVO10">
+        <AttrNames>
+          <Item Value="Kactent"/>
+          <Item Value="Libelleae"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ActiviteentrepriseVO1Iterator" id="Kactent">
+      <AttrNames>
+        <Item Value="Kactent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ActiviteentrepriseVO1Iterator" id="Libelleae">
+      <AttrNames>
+        <Item Value="Libelleae"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ActiviteentrepriseVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ActiviteentrepriseAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ActiviteentrepriseAMDataControl"/>
+    <action IterBinding="ActiviteentrepriseVO1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

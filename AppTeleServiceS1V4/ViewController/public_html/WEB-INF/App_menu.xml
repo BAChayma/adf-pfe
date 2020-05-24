@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+  <itemNode id="itemNode_Contribuable" label="Contribuable" action="Contribuable" focusViewId="/Contribuable">
+    <itemNode id="itemNode_ConsulterDossier" label="ConsulterDossier" action="ConsulterDossier"
+              focusViewId="/ConsulterDossier"/>
+  </itemNode>
+  <itemNode id="itemNode_Declaration" label="Declaration" action="Declaration" focusViewId="/Declaration"/>
+  <itemNode id="itemNode_Reclamation" label="Reclamation" action="Reclamation" focusViewId="/Reclamation"/>
+  <itemNode id="itemNode_Paiement" label="Paiement" action="Paiement" focusViewId="/Paiement"/>
+  <itemNode id="itemNode_Administration" label="Administration" action="Administration"
+            focusViewId="/Administration">
+  <itemNode id="itemNode_ActiviteEntreprise" label="ActiviteEntreprise" action="ActiviteEntreprise"
+            focusViewId="/ActiviteEntreprise"/>
+  <itemNode id="itemNode_FormeJuridique" label="FormeJuridique" action="FormeJuridique"
+            focusViewId="/FormeJuridique"/>
+  <itemNode id="itemNode_ModePaiement" label="ModePaiement" action="ModePaiement" focusViewId="/ModePaiement"/>
+  <itemNode id="itemNode_Banque" label="Banque" action="Banque" focusViewId="/Banque"/>
+  <itemNode id="itemNode_Agence" label="Agence" action="Agence" focusViewId="/Agence"/>
+  <itemNode id="itemNode_Pays" label="Pays" action="Pays" focusViewId="/Pays"/>
+  <itemNode id="itemNode_Impot" label="Impot" action="Impot" focusViewId="/Impot"/>
+  <itemNode id="itemNode_StructPrivi" label="StructPrivi" action="StructPrivi" focusViewId="/StructPrivi"/>
+  <itemNode id="itemNode_StructAdr" label="StructAdr" action="SructAdr" focusViewId="/StructAdr"/>
+  <itemNode id="itemNode_TypeStructPrivi" label="TypeStructPrivi" action="TypeStrucPrivi"
+            focusViewId="/TypeStructPrivi"/>
+  <itemNode id="itemNode_TypeStructAdr" label="TypeStructAdr" action="TypeStructAdr"
+            focusViewId="/TypeStructAdr"/>
+</itemNode>
+</menu>

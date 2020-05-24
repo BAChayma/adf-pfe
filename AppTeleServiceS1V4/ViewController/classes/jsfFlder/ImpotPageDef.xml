@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ImpotPageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ImpotVO1" RangeSize="25" DataControl="ImpotAMDataControl" id="ImpotVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ImpotVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="ImpotVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ImpotAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ImpotAMDataControl"/>
+    <attributeValues IterBinding="ImpotVO1Iterator" id="Kimpot">
+      <AttrNames>
+        <Item Value="Kimpot"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImpotVO1Iterator" id="Limpot">
+      <AttrNames>
+        <Item Value="Limpot"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImpotVO1Iterator" id="Abriviation">
+      <AttrNames>
+        <Item Value="Abriviation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImpotVO1Iterator" id="Periodicite">
+      <AttrNames>
+        <Item Value="Periodicite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImpotVO1Iterator" id="Taux">
+      <AttrNames>
+        <Item Value="Taux"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImpotVO1Iterator" id="Datedebeffet">
+      <AttrNames>
+        <Item Value="Datedebeffet"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ImpotVO1Iterator" id="ImpotVO1">
+      <nodeDefinition DefName="model.VO.ImpotVO" Name="ImpotVO10">
+        <AttrNames>
+          <Item Value="Kimpot"/>
+          <Item Value="Limpot"/>
+          <Item Value="Abriviation"/>
+          <Item Value="Periodicite"/>
+          <Item Value="Taux"/>
+          <Item Value="Datedebeffet"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

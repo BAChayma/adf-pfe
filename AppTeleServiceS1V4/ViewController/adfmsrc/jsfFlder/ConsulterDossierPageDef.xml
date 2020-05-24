@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ConsulterDossierPageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContribuableVO1" RangeSize="25" DataControl="ContribuableAMDataControl"
+              id="ContribuableVO1Iterator"/>
+    <searchRegion Criteria="ContribuableVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContribuableVO1Iterator" id="ContribuableVOCriteriaQuery"/>
+    <iterator Binds="AdresseVO3" RangeSize="25" DataControl="ContribuableAMDataControl" id="AdresseVO3Iterator"/>
+    <iterator Binds="ComptebancaireVO2" RangeSize="25" DataControl="ContribuableAMDataControl"
+              id="ComptebancaireVO2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Nomcommerciale">
+      <AttrNames>
+        <Item Value="Nomcommerciale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Raisonsociale">
+      <AttrNames>
+        <Item Value="Raisonsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Datedebexp">
+      <AttrNames>
+        <Item Value="Datedebexp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Capitalsociale">
+      <AttrNames>
+        <Item Value="Capitalsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Registrecommerce">
+      <AttrNames>
+        <Item Value="Registrecommerce"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_activiteEse" id="activiteEse"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_nationnalite" id="nationnalite"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_Kformjuri" id="Kformjuri"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ContribuableAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ContribuableAMDataControl"/>
+    <attributeValues IterBinding="AdresseVO3Iterator" id="Numrue">
+      <AttrNames>
+        <Item Value="Numrue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO3Iterator" id="Rue">
+      <AttrNames>
+        <Item Value="Rue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdresseVO3Iterator" id="Cp">
+      <AttrNames>
+        <Item Value="Cp"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdresseVO3Iterator" StaticList="false" Uses="LOV_Kstructureadr" id="Kstructureadr"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AdresseVO3Iterator" id="Kadresse">
+      <AttrNames>
+        <Item Value="Kadresse"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AdresseVO3Iterator" id="AdresseVO3">
+      <nodeDefinition DefName="model.VO.AdresseVO" Name="AdresseVO30">
+        <AttrNames>
+          <Item Value="Kadresse"/>
+          <Item Value="Numrue"/>
+          <Item Value="Rue"/>
+          <Item Value="Cp"/>
+          <Item Value="Kstructureadr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AdresseVO3Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="AdresseVO3Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="ComptebancaireVO2Iterator" id="ComptebancaireVO2">
+      <nodeDefinition DefName="model.VO.ComptebancaireVO" Name="ComptebancaireVO20">
+        <AttrNames>
+          <Item Value="Kcompte"/>
+          <Item Value="Kagence"/>
+          <Item Value="Kbanque"/>
+          <Item Value="Rib"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ComptebancaireVO2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ComptebancaireVO2Iterator" id="Kcompte">
+      <AttrNames>
+        <Item Value="Kcompte"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ComptebancaireVO2Iterator" StaticList="false" Uses="LOV_Kagence" id="Kagence"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ComptebancaireVO2Iterator" StaticList="false" Uses="LOV_Kbanque" id="Kbanque"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ComptebancaireVO2Iterator" id="Rib">
+      <AttrNames>
+        <Item Value="Rib"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ComptebancaireVO2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

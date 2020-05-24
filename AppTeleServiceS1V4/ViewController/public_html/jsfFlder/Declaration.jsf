@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Declaration.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Declaration.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_Declaration.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Declaration.f1}">
+           <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Contribuable.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_jsfFlder_Declaration.ps1}"
+                                      orientation="vertical" splitterPosition="300">
+                        <f:facet name="first">
+                            <af:panelSplitter id="ps2" binding="#{backingBeanScope.backing_jsfFlder_Declaration.ps2}"
+                                              orientation="vertical" splitterPosition="150">
+                                <f:facet name="first">
+                                    <af:panelBox text="Recherche d'un contribuable" id="pb1"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_Declaration.pb1}">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelGroupLayout layout="vertical" id="pgl1"
+                                                             binding="#{backingBeanScope.backing_jsfFlder_Declaration.pgl1}">
+                                            <af:query id="qryId1" headerText="" disclosed="true"
+                                                      value="#{bindings.ContribuableVOCriteriaQuery.queryDescriptor}"
+                                                      model="#{bindings.ContribuableVOCriteriaQuery.queryModel}"
+                                                      queryListener="#{bindings.ContribuableVOCriteriaQuery.processQuery}"
+                                                      queryOperationListener="#{bindings.ContribuableVOCriteriaQuery.processQueryOperation}"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Declaration.qryId1}"
+                                                      saveQueryMode="hidden" displayMode="design"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelBox>
+                                </f:facet>
+                                <f:facet name="second">
+                                    <af:panelBox text="Information sur un contribuable" id="pb2"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_Declaration.pb2}">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelFormLayout id="pfl1"
+                                                            binding="#{backingBeanScope.backing_jsfFlder_Declaration.pfl1}"
+                                                            maxColumns="2" rows="4">
+                                            <af:inputText value="#{bindings.Nomcommerciale.inputValue}"
+                                                          label="Nom commerciale"
+                                                          required="#{bindings.Nomcommerciale.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Nomcommerciale.hints.precision}"
+                                                          shortDesc="#{bindings.Nomcommerciale.hints.tooltip}" id="it1"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_Declaration.it1}">
+                                                <f:validator binding="#{bindings.Nomcommerciale.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Raisonsociale.inputValue}"
+                                                          label="Raison sociale"
+                                                          required="#{bindings.Raisonsociale.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Raisonsociale.hints.precision}"
+                                                          shortDesc="#{bindings.Raisonsociale.hints.tooltip}" id="it2"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_Declaration.it2}">
+                                                <f:validator binding="#{bindings.Raisonsociale.validator}"/>
+                                            </af:inputText>
+                                            <af:inputDate value="#{bindings.Datedebexp.inputValue}" readOnly="true"
+                                                          label="Date debut d'exploitation"
+                                                          required="#{bindings.Datedebexp.hints.mandatory}"
+                                                          columns="#{bindings.Datedebexp.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Datedebexp.hints.tooltip}" id="id1"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_Declaration.id1}">
+                                                <f:validator binding="#{bindings.Datedebexp.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.Datedebexp.format}"/>
+                                            </af:inputDate>
+                                            <af:inputText value="#{bindings.Capitalsociale.inputValue}"
+                                                          label="Capitale sociale"
+                                                          required="#{bindings.Capitalsociale.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Capitalsociale.hints.precision}"
+                                                          shortDesc="#{bindings.Capitalsociale.hints.tooltip}" id="it3"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_Declaration.it3}">
+                                                <f:validator binding="#{bindings.Capitalsociale.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Capitalsociale.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Registrecommerce.inputValue}"
+                                                          label="Registre de commerce"
+                                                          required="#{bindings.Registrecommerce.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="50"
+                                                          maximumLength="#{bindings.Registrecommerce.hints.precision}"
+                                                          shortDesc="#{bindings.Registrecommerce.hints.tooltip}"
+                                                          id="it4"
+                                                          binding="#{backingBeanScope.backing_jsfFlder_Declaration.it4}">
+                                                <f:validator binding="#{bindings.Registrecommerce.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.Kformjuri.inputValue}"
+                                                                label="#{bindings.Kformjuri.label}"
+                                                                required="#{bindings.Kformjuri.hints.mandatory}"
+                                                                shortDesc="#{bindings.Kformjuri.hints.tooltip}"
+                                                                readOnly="true" id="soc1"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_Declaration.soc1}">
+                                                <f:selectItems value="#{bindings.Kformjuri.items}" id="si1"
+                                                               binding="#{backingBeanScope.backing_jsfFlder_Declaration.si1}"/>
+                                                <f:validator binding="#{bindings.Kformjuri.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.activiteEse.inputValue}"
+                                                                label="#{bindings.activiteEse.label}"
+                                                                required="#{bindings.activiteEse.hints.mandatory}"
+                                                                shortDesc="#{bindings.activiteEse.hints.tooltip}"
+                                                                readOnly="true" id="soc2"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_Declaration.soc2}">
+                                                <f:selectItems value="#{bindings.activiteEse.items}" id="si2"
+                                                               binding="#{backingBeanScope.backing_jsfFlder_Declaration.si2}"/>
+                                                <f:validator binding="#{bindings.activiteEse.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.nationnalite.inputValue}"
+                                                                label="#{bindings.nationnalite.label}"
+                                                                required="#{bindings.nationnalite.hints.mandatory}"
+                                                                shortDesc="#{bindings.nationnalite.hints.tooltip}"
+                                                                readOnly="true" id="soc3"
+                                                                binding="#{backingBeanScope.backing_jsfFlder_Declaration.soc3}">
+                                                <f:selectItems value="#{bindings.nationnalite.items}" id="si3"
+                                                               binding="#{backingBeanScope.backing_jsfFlder_Declaration.si3}"/>
+                                                <f:validator binding="#{bindings.nationnalite.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:panelFormLayout>
+                                    </af:panelBox>
+                                </f:facet>
+                            </af:panelSplitter>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelTabbed position="above" id="pt2"
+                                            binding="#{backingBeanScope.backing_jsfFlder_Declaration.pt2}">
+                                <af:showDetailItem id="tab1" text="Liste des declaration"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Declaration.tab1}">
+                                    <af:table value="#{bindings.DeclarationVO2.collectionModel}" var="row"
+                                              rows="#{bindings.DeclarationVO2.rangeSize}"
+                                              emptyText="#{bindings.DeclarationVO2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0" fetchSize="#{bindings.DeclarationVO2.rangeSize}"
+                                              id="t1" binding="#{backingBeanScope.backing_jsfFlder_Declaration.t1}"
+                                              partialTriggers="::b1">
+                                        <af:column headerText="ID declaration" id="c1">
+                                            <af:outputText value="#{row.Kdcl}"
+                                                           shortDesc="#{bindings.DeclarationVO2.hints.Kdcl.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.DeclarationVO2.hints.Kdcl.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="ID impot" id="c2">
+                                            <af:outputText value="#{row.Kimpot}"
+                                                           shortDesc="#{bindings.DeclarationVO2.hints.Kimpot.tooltip}"
+                                                           id="ot2">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.DeclarationVO2.hints.Kimpot.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Montant à declarer" id="c3">
+                                            <af:outputText value="#{row.Mantantdeclarer}"
+                                                           shortDesc="#{bindings.DeclarationVO2.hints.Mantantdeclarer.tooltip}"
+                                                           id="ot3">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.DeclarationVO2.hints.Mantantdeclarer.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Montant de declaration" id="c4">
+                                            <af:outputText value="#{row.Mantantdeclaration}"
+                                                           shortDesc="#{bindings.DeclarationVO2.hints.Mantantdeclaration.tooltip}"
+                                                           id="ot4">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.DeclarationVO2.hints.Mantantdeclaration.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Date de declaration" id="c5">
+                                            <af:outputText value="#{row.Datedcl}"
+                                                           shortDesc="#{bindings.DeclarationVO2.hints.Datedcl.tooltip}"
+                                                           id="ot5">
+                                                <af:convertDateTime pattern="#{bindings.DeclarationVO2.hints.Datedcl.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                    </af:table>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab2" text="Ajouter une declaration"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Declaration.tab2}">
+                                    <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_Declaration.t2}">
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Declaration.b1}"
+                                                   icon="#{resource['images:ajouter.png']}"/>
+                                        <af:button text="Calculer" id="b2"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Declaration.b2}"
+                                                   action="#{backingBeanScope.backing_jsfFlder_Declaration.calculer_action}"/>
+                                        <af:button text="Valider"
+                                                   disabled="#{!bindings.Commit.enabled}" id="b3"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Declaration.b3}"
+                                                   icon="#{resource['images:commit.png']}"
+                                                   action="#{backingBeanScope.backing_jsfFlder_Declaration.enregistrer_action}"/>
+                                        <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Declaration.b4}"
+                                                   icon="#{resource['images:rollback.png']}">
+                                            <af:resetActionListener/>
+                                        </af:button>
+                                    </af:toolbar>
+                                    <af:panelFormLayout id="pfl2"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_Declaration.pfl2}">
+                                        <af:panelLabelAndMessage label="Nature impot" id="plam2"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Declaration.plam2}">
+                                            <af:panelGroupLayout id="pgl2"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Declaration.pgl2}"
+                                                                 layout="horizontal">
+                                                <af:inputListOfValues id="kimpotId"
+                                                                      
+                                                                      value="#{bindings.Kimpot.inputValue}"
+                                                                      
+                                                                      model="#{bindings.Kimpot.listOfValuesModel}"
+                                                                      required="#{bindings.Kimpot.hints.mandatory}"
+                                                                      columns="10"
+                                                                      shortDesc="#{bindings.Kimpot.hints.tooltip}"
+                                                                      binding="#{backingBeanScope.backing_jsfFlder_Declaration.kimpotId}"
+                                                                      label="ID impot">
+                                                    <f:validator binding="#{bindings.Kimpot.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Kimpot.format}"/>
+                                                </af:inputListOfValues>
+                                                <af:inputText value="#{bindings.impot.inputValue}"
+                                                              label="Impot"
+                                                              required="#{bindings.impot.hints.mandatory}"
+                                                              columns="30"
+                                                              maximumLength="#{bindings.impot.hints.precision}"
+                                                              shortDesc="#{bindings.impot.hints.tooltip}" id="it7"
+                                                              binding="#{backingBeanScope.backing_jsfFlder_Declaration.it7}">
+                                                    <f:validator binding="#{bindings.impot.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.taux.inputValue}"
+                                                              label="Taux"
+                                                              required="#{bindings.taux.hints.mandatory}"
+                                                              columns="20"
+                                                              maximumLength="#{bindings.taux.hints.precision}"
+                                                              shortDesc="#{bindings.taux.hints.tooltip}" id="it9"
+                                                              binding="#{backingBeanScope.backing_jsfFlder_Declaration.it9}">
+                                                    <f:validator binding="#{bindings.taux.validator}"/>
+                                                </af:inputText>
+                                            </af:panelGroupLayout>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="ID declaration" id="plam3"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Declaration.plam3}">
+                                            <af:outputText value="#{bindings.Kdcl.inputValue}"
+                                                           shortDesc="#{bindings.Kdcl.hints.tooltip}" id="ot7"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Declaration.ot7}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Kdcl.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:inputText label="Montant à declarer" id="it5"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Declaration.it5}"
+                                                      columns="50" value="#{bindings.Mantantdeclarer.inputValue}"/>
+                                        <af:inputText
+                                                      label="Montant de declaration"
+                                                      required="#{bindings.Mantantdeclaration.hints.mandatory}"
+                                                      columns="50"
+                                                      maximumLength="#{bindings.Mantantdeclaration.hints.precision}"
+                                                      shortDesc="#{bindings.Mantantdeclaration.hints.tooltip}" id="it6"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Declaration.it6}"
+                                                      readOnly="true"
+                                                      value="#{bindings.Mantantdeclaration.inputValue}">
+                                            <f:validator binding="#{bindings.Mantantdeclaration.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Mantantdeclaration.format}"/>
+                                        </af:inputText>
+                                        <af:inputDate value="#{bindings.Datedcl.inputValue}" label="Date de declaration"
+                                                      required="#{bindings.Datedcl.hints.mandatory}"
+                                                      columns="50"
+                                                      shortDesc="#{bindings.Datedcl.hints.tooltip}" id="id2"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Declaration.id2}">
+                                            <f:validator binding="#{bindings.Datedcl.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.Datedcl.format}"/>
+                                        </af:inputDate>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </af:panelTabbed>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Declaration-->
+</f:view>

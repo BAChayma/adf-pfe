@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ModePaiement.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.f1}">
+            <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelTabbed position="above" id="pt2"
+                                    binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.pt2}">
+                        <af:showDetailItem id="tab1" text="Liste des mode de paiement"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.tab1}">
+                            <af:toolbar id="t1" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.t1}">
+                                <af:button text="Modifier" id="b3"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b3}"
+                                           icon="#{resource['images:modifier.png']}">
+                                    <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                           disabled="#{!bindings.Delete.enabled}" id="b4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b4}"
+                                           icon="#{resource['images:supprimer.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b5"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b5}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b7}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:table value="#{bindings.ModepaiementVO1.collectionModel}" var="row"
+                                      rows="#{bindings.ModepaiementVO1.rangeSize}"
+                                      emptyText="#{bindings.ModepaiementVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.ModepaiementVO1.rangeSize}" id="t3"
+                                      partialTriggers="::b4 ::b2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.t3}">
+                                <af:column headerText="ID mode de paiement" id="c1" width="160">
+                                    <af:outputText value="#{row.Kmodepaiement}"
+                                                   shortDesc="#{bindings.ModepaiementVO1.hints.Kmodepaiement.tooltip}"
+                                                   id="ot3">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ModepaiementVO1.hints.Kmodepaiement.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Nom mode de paiement" id="c2" width="164">
+                                    <af:outputText value="#{row.Libelle}"
+                                                   shortDesc="#{bindings.ModepaiementVO1.hints.Libelle.tooltip}"
+                                                   id="ot4"/>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Ajouter un mode de paiement"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.tab2}">
+                            <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.t2}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b2}"
+                                           icon="#{resource['images:ajouter.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b6"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b6}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b8"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b8}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:panelFormLayout id="pfl2"
+                                                binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.pfl2}">
+                                <af:panelLabelAndMessage label="ID mode de paiement" id="plam2"
+                                                         binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.plam2}">
+                                    <af:outputText value="#{bindings.Kmodepaiement.inputValue}"
+                                                   shortDesc="#{bindings.Kmodepaiement.hints.tooltip}" id="ot2"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.ot2}">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.Kmodepaiement.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.Libelle.inputValue}" label="Libelle mode de paiement"
+                                              required="#{bindings.Libelle.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Libelle.hints.precision}"
+                                              shortDesc="#{bindings.Libelle.hints.tooltip}" id="it2"
+                                              binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.it2}">
+                                    <f:validator binding="#{bindings.Libelle.validator}"/>
+                                </af:inputText>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.p1}">
+                <af:panelWindow id="pw1" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.pw1}">
+                    <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.pfl1}">
+                        <af:panelLabelAndMessage label="ID mode de paiement" id="plam1"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.plam1}">
+                            <af:outputText value="#{bindings.Kmodepaiement.inputValue}"
+                                           shortDesc="#{bindings.Kmodepaiement.hints.tooltip}" id="ot1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.ot1}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kmodepaiement.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.Libelle.inputValue}" label="Libelle mode de paiement"
+                                      required="#{bindings.Libelle.hints.mandatory}"
+                                      columns="#{bindings.Libelle.hints.displayWidth}"
+                                      maximumLength="#{bindings.Libelle.hints.precision}"
+                                      shortDesc="#{bindings.Libelle.hints.tooltip}" id="it1"
+                                      binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.it1}">
+                            <f:validator binding="#{bindings.Libelle.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b1"
+                                       binding="#{backingBeanScope.backing_jsfFlder_ModePaiement.b1}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_ModePaiement-->
+</f:view>

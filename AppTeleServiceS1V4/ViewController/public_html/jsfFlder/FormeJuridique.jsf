@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="FormeJuridique.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.f1}">
+            <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Contribuable.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelTabbed position="above" id="pt2"
+                                    binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.pt2}">
+                        <af:showDetailItem id="tab1" text="Liste des formes juridiques"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.tab1}">
+                            <af:toolbar id="t1" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.t1}">
+                                <af:button text="Modifier" id="b1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b1}"
+                                           icon="#{resource['images:modifier.png']}">
+                                    <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                           disabled="#{!bindings.Delete.enabled}" id="b3"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b3}"
+                                           icon="#{resource['images:supprimer.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b4}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b6"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b6}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:table value="#{bindings.FormejuridiqueVO1.collectionModel}" var="row"
+                                      rows="#{bindings.FormejuridiqueVO1.rangeSize}"
+                                      emptyText="#{bindings.FormejuridiqueVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.FormejuridiqueVO1.rangeSize}"
+                                      id="t3" partialTriggers="::b3 ::b2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.t3}">
+                                <af:column headerText="ID forme juridique" id="c1" width="140">
+                                    <af:outputText value="#{row.Kformjuri}"
+                                                   shortDesc="#{bindings.FormejuridiqueVO1.hints.Kformjuri.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.FormejuridiqueVO1.hints.Kformjuri.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Libelle forme juridique" id="c2" width="151">
+                                    <af:outputText value="#{row.Libellefj}"
+                                                   shortDesc="#{bindings.FormejuridiqueVO1.hints.Libellefj.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Ajouter un forme juridique"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.tab2}">
+                            <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.t2}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b2}"
+                                           icon="#{resource['images:ajouter.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b5"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b5}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b7}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:panelFormLayout id="pfl1"
+                                                binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.pfl1}">
+                                <af:panelLabelAndMessage label="ID forme juridique" id="plam1"
+                                                         binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.plam1}">
+                                    <af:outputText value="#{bindings.Kformjuri.inputValue}"
+                                                   shortDesc="#{bindings.Kformjuri.hints.tooltip}" id="ot3"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.ot3}">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Kformjuri.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.Libellefj.inputValue}" label="Libelle forme juridique"
+                                              required="#{bindings.Libellefj.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Libellefj.hints.precision}"
+                                              shortDesc="#{bindings.Libellefj.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.it1}">
+                                    <f:validator binding="#{bindings.Libellefj.validator}"/>
+                                </af:inputText>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.p1}">
+                <af:panelWindow id="pw1" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.pw1}">
+                    <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.pfl2}">
+                        <af:panelLabelAndMessage label="ID forme juridique" id="plam2"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.plam2}">
+                            <af:outputText value="#{bindings.Kformjuri.inputValue}"
+                                           shortDesc="#{bindings.Kformjuri.hints.tooltip}" id="ot4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.ot4}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kformjuri.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.Libellefj.inputValue}" label="Libelle forme juridique"
+                                      required="#{bindings.Libellefj.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Libellefj.hints.precision}"
+                                      shortDesc="#{bindings.Libellefj.hints.tooltip}" id="it2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.it2}">
+                            <f:validator binding="#{bindings.Libellefj.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b8"
+                                       binding="#{backingBeanScope.backing_jsfFlder_FormeJuridique.b8}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_FormeJuridique-->
+</f:view>

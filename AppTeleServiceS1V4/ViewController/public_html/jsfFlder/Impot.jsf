@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Impot.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Impot.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_Impot.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Impot.f1}">
+            <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Impot.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelTabbed position="above" id="pt2" binding="#{backingBeanScope.backing_jsfFlder_Impot.pt2}">
+                        <af:showDetailItem id="tab1" text="Liste des impots"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.tab1}">
+                            <af:toolbar id="t1" binding="#{backingBeanScope.backing_jsfFlder_Impot.t1}">
+                                <af:button text="Modifier" id="b1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b1}"
+                                           icon="#{resource['images:modifier.png']}">
+                                    <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                           disabled="#{!bindings.Delete.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b2}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b4}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b6"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b6}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:table value="#{bindings.ImpotVO1.collectionModel}" var="row"
+                                      rows="#{bindings.ImpotVO1.rangeSize}"
+                                      emptyText="#{bindings.ImpotVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.ImpotVO1.rangeSize}" id="t3"
+                                      partialTriggers="::b2 ::b3"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Impot.t3}">
+                                <af:column headerText="ID impot" id="c1">
+                                    <af:outputText value="#{row.Kimpot}"
+                                                   shortDesc="#{bindings.ImpotVO1.hints.Kimpot.tooltip}" id="ot2">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ImpotVO1.hints.Kimpot.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Nom impot" id="c2">
+                                    <af:outputText value="#{row.Limpot}"
+                                                   shortDesc="#{bindings.ImpotVO1.hints.Limpot.tooltip}" id="ot3"/>
+                                </af:column>
+                                <af:column headerText="Abriviation impot" id="c3">
+                                    <af:outputText value="#{row.Abriviation}"
+                                                   shortDesc="#{bindings.ImpotVO1.hints.Abriviation.tooltip}" id="ot4"/>
+                                </af:column>
+                                <af:column headerText="Periodicite impot" id="c4">
+                                    <af:outputText value="#{row.Periodicite}"
+                                                   shortDesc="#{bindings.ImpotVO1.hints.Periodicite.tooltip}" id="ot5"/>
+                                </af:column>
+                                <af:column headerText="Taux impot" id="c5">
+                                    <af:outputText value="#{row.Taux}"
+                                                   shortDesc="#{bindings.ImpotVO1.hints.Taux.tooltip}" id="ot6">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ImpotVO1.hints.Taux.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Date debut effet impot" id="c6">
+                                    <af:outputText value="#{row.Datedebeffet}"
+                                                   shortDesc="#{bindings.ImpotVO1.hints.Datedebeffet.tooltip}" id="ot7">
+                                        <af:convertDateTime pattern="#{bindings.ImpotVO1.hints.Datedebeffet.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Ajouter un impot"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.tab2}">
+                            <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_Impot.t2}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b3"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b3}"
+                                           icon="#{resource['images:ajouter.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b5"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b5}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.b7}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_jsfFlder_Impot.pfl1}">
+                                <af:panelLabelAndMessage label="ID impot" id="plam1"
+                                                         binding="#{backingBeanScope.backing_jsfFlder_Impot.plam1}">
+                                    <af:outputText value="#{bindings.Kimpot.inputValue}"
+                                                   shortDesc="#{bindings.Kimpot.hints.tooltip}" id="ot1"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Impot.ot1}">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Kimpot.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.Limpot.inputValue}" label="Nom impot"
+                                              required="#{bindings.Limpot.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Limpot.hints.precision}"
+                                              shortDesc="#{bindings.Limpot.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Impot.it1}">
+                                    <f:validator binding="#{bindings.Limpot.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Abriviation.inputValue}" label="Abriviation impot"
+                                              required="#{bindings.Abriviation.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Abriviation.hints.precision}"
+                                              shortDesc="#{bindings.Abriviation.hints.tooltip}" id="it2"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Impot.it2}">
+                                    <f:validator binding="#{bindings.Abriviation.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Periodicite.inputValue}" label=" Periodicite impot"
+                                              required="#{bindings.Periodicite.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Periodicite.hints.precision}"
+                                              shortDesc="#{bindings.Periodicite.hints.tooltip}" id="it3"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Impot.it3}">
+                                    <f:validator binding="#{bindings.Periodicite.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Taux.inputValue}" label="Taux impot"
+                                              required="#{bindings.Taux.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Taux.hints.precision}"
+                                              shortDesc="#{bindings.Taux.hints.tooltip}" id="it4"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Impot.it4}">
+                                    <f:validator binding="#{bindings.Taux.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Taux.format}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.Datedebeffet.inputValue}"
+                                              label="Date debut d'effet impot"
+                                              required="#{bindings.Datedebeffet.hints.mandatory}"
+                                              columns="#{bindings.Datedebeffet.hints.displayWidth}"
+                                              shortDesc="#{bindings.Datedebeffet.hints.tooltip}" id="id1"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Impot.id1}">
+                                    <f:validator binding="#{bindings.Datedebeffet.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.Datedebeffet.format}"/>
+                                </af:inputDate>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+                <f:attribute name="NomPage" value="Impot"/>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{backingBeanScope.backing_jsfFlder_Impot.p1}">
+                <af:panelWindow id="pw1" binding="#{backingBeanScope.backing_jsfFlder_Impot.pw1}">
+                    <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_jsfFlder_Impot.pfl2}">
+                        <af:panelLabelAndMessage label="ID impot" id="plam2"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_Impot.plam2}">
+                            <af:outputText value="#{bindings.Kimpot.inputValue}"
+                                           shortDesc="#{bindings.Kimpot.hints.tooltip}" id="ot8"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Impot.ot8}">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Kimpot.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.Limpot.inputValue}" label="Nom impot"
+                                      required="#{bindings.Limpot.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Limpot.hints.precision}"
+                                      shortDesc="#{bindings.Limpot.hints.tooltip}" id="it5"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Impot.it5}">
+                            <f:validator binding="#{bindings.Limpot.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Abriviation.inputValue}" label="Abriviation impot"
+                                      required="#{bindings.Abriviation.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Abriviation.hints.precision}"
+                                      shortDesc="#{bindings.Abriviation.hints.tooltip}" id="it6"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Impot.it6}">
+                            <f:validator binding="#{bindings.Abriviation.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Periodicite.inputValue}" label="Periodicite impot"
+                                      required="#{bindings.Periodicite.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Periodicite.hints.precision}"
+                                      shortDesc="#{bindings.Periodicite.hints.tooltip}" id="it7"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Impot.it7}">
+                            <f:validator binding="#{bindings.Periodicite.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Taux.inputValue}" label="Taux impot"
+                                      required="#{bindings.Taux.hints.mandatory}"
+                                      columns="50"
+                                      maximumLength="#{bindings.Taux.hints.precision}"
+                                      shortDesc="#{bindings.Taux.hints.tooltip}" id="it8"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Impot.it8}">
+                            <f:validator binding="#{bindings.Taux.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Taux.format}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.Datedebeffet.inputValue}" label="Date debut d'effet impot"
+                                      required="#{bindings.Datedebeffet.hints.mandatory}"
+                                      columns="#{bindings.Datedebeffet.hints.displayWidth}"
+                                      shortDesc="#{bindings.Datedebeffet.hints.tooltip}" id="id2"
+                                      binding="#{backingBeanScope.backing_jsfFlder_Impot.id2}">
+                            <f:validator binding="#{bindings.Datedebeffet.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.Datedebeffet.format}"/>
+                        </af:inputDate>
+                        <f:facet name="footer">
+                            <af:button text="Enregistrer" id="b8" binding="#{backingBeanScope.backing_jsfFlder_Impot.b8}"
+                                       icon="#{resource['images:enregistrer.png']}"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Impot-->
+</f:view>

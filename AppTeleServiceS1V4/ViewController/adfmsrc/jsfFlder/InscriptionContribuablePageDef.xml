@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="InscriptionContribuablePageDef"
+                Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContribuableVO1" RangeSize="25" DataControl="ContribuableAMDataControl"
+              id="ContribuableVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ContribuableVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ContribuableAMDataControl"/>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Kcnc">
+      <AttrNames>
+        <Item Value="Kcnc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Nif">
+      <AttrNames>
+        <Item Value="Nif"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Nomcommerciale">
+      <AttrNames>
+        <Item Value="Nomcommerciale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Raisonsociale">
+      <AttrNames>
+        <Item Value="Raisonsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Datedebexp">
+      <AttrNames>
+        <Item Value="Datedebexp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Capitalsociale">
+      <AttrNames>
+        <Item Value="Capitalsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContribuableVO1Iterator" id="Registrecommerce">
+      <AttrNames>
+        <Item Value="Registrecommerce"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_Kformjuri" id="Kformjuri"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_activiteEse" id="activiteEse"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContribuableVO1Iterator" StaticList="false" Uses="LOV_nationnalite" id="nationnalite"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

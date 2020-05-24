@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="PaysPageDef" Package="jsfFlder">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaysVO2" RangeSize="25" DataControl="PaysAMDataControl" id="PaysVO2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PaysVO2Iterator" id="Kpays">
+      <AttrNames>
+        <Item Value="Kpays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaysVO2Iterator" id="Pays">
+      <AttrNames>
+        <Item Value="Pays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaysVO2Iterator" id="Nationnalite">
+      <AttrNames>
+        <Item Value="Nationnalite"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PaysVO2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PaysVO2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="PaysAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="PaysAMDataControl"/>
+    <tree IterBinding="PaysVO2Iterator" id="PaysVO2">
+      <nodeDefinition DefName="model.VO.PaysVO" Name="PaysVO20">
+        <AttrNames>
+          <Item Value="Kpays"/>
+          <Item Value="Pays"/>
+          <Item Value="Nationnalite"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

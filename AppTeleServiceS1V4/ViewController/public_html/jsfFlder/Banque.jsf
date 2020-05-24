@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Banque.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Banque.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_Banque.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Banque.f1}">
+            <af:pageTemplate viewId="/templateDefv5.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_jsfFlder_Banque.pt1}">
+                <f:facet name="bodyfacet">
+                    <af:panelTabbed position="above" id="pt2" binding="#{backingBeanScope.backing_jsfFlder_Banque.pt2}">
+                        <af:showDetailItem id="tab1" text="Liste des banques"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.tab1}">
+                            <af:toolbar id="t1" binding="#{backingBeanScope.backing_jsfFlder_Banque.t1}">
+                                <af:button text="Modifier" id="b1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b1}"
+                                           icon="#{resource['images:modifier.png']}"/>
+                                <af:button actionListener="#{bindings.Delete.execute}" text="Supprimer"
+                                           disabled="#{!bindings.Delete.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b2}"
+                                           icon="#{resource['images:supprimer.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b3"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b3}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b4}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:table value="#{bindings.BanqueVO1.collectionModel}" var="row"
+                                      rows="#{bindings.BanqueVO1.rangeSize}"
+                                      emptyText="#{bindings.BanqueVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.BanqueVO1.rangeSize}" id="t4"
+                                      partialTriggers="::b2 ::b5" binding="#{backingBeanScope.backing_jsfFlder_Banque.t4}">
+                                <af:column headerText="ID banque" id="c1">
+                                    <af:outputText value="#{row.Kbanque}"
+                                                   shortDesc="#{bindings.BanqueVO1.hints.Kbanque.tooltip}" id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.BanqueVO1.hints.Kbanque.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Nom banque" id="c2">
+                                    <af:outputText value="#{row.Nombanque}"
+                                                   shortDesc="#{bindings.BanqueVO1.hints.Nombanque.tooltip}" id="ot2"/>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Banque et ses agences"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.tab2}">
+                            <af:panelGroupLayout layout="vertical" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_Banque.pgl1}">
+                                <af:panelHeader text="Recherche" id="ph1"
+                                                binding="#{backingBeanScope.backing_jsfFlder_Banque.ph1}">
+                                    <af:query id="qryId1" headerText="Recherche d'une banque" disclosed="true"
+                                              value="#{bindings.BanqueVOCriteriaQuery.queryDescriptor}"
+                                              model="#{bindings.BanqueVOCriteriaQuery.queryModel}"
+                                              queryListener="#{bindings.BanqueVOCriteriaQuery.processQuery}"
+                                              queryOperationListener="#{bindings.BanqueVOCriteriaQuery.processQueryOperation}"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Banque.qryId1}"/>
+                                </af:panelHeader>
+                                <af:panelBox text="Liste des agences" id="pb2"
+                                             binding="#{backingBeanScope.backing_jsfFlder_Banque.pb2}">
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.AgenceVO2.collectionModel}" var="row"
+                                              rows="#{bindings.AgenceVO2.rangeSize}"
+                                              emptyText="#{bindings.AgenceVO2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0" fetchSize="#{bindings.AgenceVO2.rangeSize}"
+                                              id="t2" binding="#{backingBeanScope.backing_jsfFlder_Banque.t2}">
+                                        <af:column headerText="ID agence" id="c3">
+                                            <af:outputText value="#{row.Kagence}"
+                                                           shortDesc="#{bindings.AgenceVO2.hints.Kagence.tooltip}"
+                                                           id="ot5">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.AgenceVO2.hints.Kagence.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Nom agence" id="c4">
+                                            <af:outputText value="#{row.Libelleagence}"
+                                                           shortDesc="#{bindings.AgenceVO2.hints.Libelleagence.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelBox>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab3" text="Ajouter un banque"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.tab3}">
+                            <af:toolbar id="t3" binding="#{backingBeanScope.backing_jsfFlder_Banque.t3}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Ajouter"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b5"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b5}"
+                                           icon="#{resource['images:ajouter.png']}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Valider"
+                                           disabled="#{!bindings.Commit.enabled}" id="b6"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b6}"
+                                           icon="#{resource['images:commit.png']}"/>
+                                <af:button actionListener="#{bindings.Rollback.execute}" text="Annuler"
+                                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.b7}"
+                                           icon="#{resource['images:rollback.png']}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </af:toolbar>
+                            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_jsfFlder_Banque.pfl1}">
+                                <af:panelLabelAndMessage label="ID banque" id="plam1"
+                                                         binding="#{backingBeanScope.backing_jsfFlder_Banque.plam1}">
+                                    <af:outputText value="#{bindings.Kbanque.inputValue}"
+                                                   shortDesc="#{bindings.Kbanque.hints.tooltip}" id="ot3"
+                                                   binding="#{backingBeanScope.backing_jsfFlder_Banque.ot3}">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Kbanque.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.Nombanque.inputValue}" label="Nom banque"
+                                              required="#{bindings.Nombanque.hints.mandatory}"
+                                              columns="50"
+                                              maximumLength="#{bindings.Nombanque.hints.precision}"
+                                              shortDesc="#{bindings.Nombanque.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Banque.it1}">
+                                    <f:validator binding="#{bindings.Nombanque.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="20" id="s1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.s1}"/>
+                                <af:panelBox text="Ajouter adresse d'une banque" id="pb1"
+                                             binding="#{backingBeanScope.backing_jsfFlder_Banque.pb1}"
+                                             inlineStyle="width:478px;">
+                                    <f:facet name="toolbar"/>
+                                    <af:toolbar id="t5" binding="#{backingBeanScope.backing_jsfFlder_Banque.t5}">
+                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                   text="Ajouter" disabled="#{!bindings.CreateInsert1.enabled}"
+                                                   id="b8" binding="#{backingBeanScope.backing_jsfFlder_Banque.b8}"
+                                                   icon="#{resource['images:ajouter.png']}"/>
+                                    </af:toolbar>
+                                    <af:panelFormLayout id="pfl2"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_Banque.pfl2}">
+                                        <af:panelLabelAndMessage label="ID adresse" id="plam2"
+                                                                 binding="#{backingBeanScope.backing_jsfFlder_Banque.plam2}">
+                                            <af:outputText value="#{bindings.Kadresse.inputValue}"
+                                                           shortDesc="#{bindings.Kadresse.hints.tooltip}" id="ot4"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.ot4}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Kadresse.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:inputText value="#{bindings.Numrue.inputValue}" label="Numero rue"
+                                                      required="#{bindings.Numrue.hints.mandatory}"
+                                                      columns="50"
+                                                      maximumLength="#{bindings.Numrue.hints.precision}"
+                                                      shortDesc="#{bindings.Numrue.hints.tooltip}" id="it2"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Banque.it2}">
+                                            <f:validator binding="#{bindings.Numrue.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Numrue.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Rue.inputValue}" label="Rue"
+                                                      required="#{bindings.Rue.hints.mandatory}"
+                                                      columns="50"
+                                                      maximumLength="#{bindings.Rue.hints.precision}"
+                                                      shortDesc="#{bindings.Rue.hints.tooltip}" id="it3"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Banque.it3}">
+                                            <f:validator binding="#{bindings.Rue.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Cp.inputValue}" label="Code postale"
+                                                      required="#{bindings.Cp.hints.mandatory}"
+                                                      columns="50"
+                                                      maximumLength="#{bindings.Cp.hints.precision}"
+                                                      shortDesc="#{bindings.Cp.hints.tooltip}" id="it4"
+                                                      binding="#{backingBeanScope.backing_jsfFlder_Banque.it4}">
+                                            <f:validator binding="#{bindings.Cp.validator}"/>
+                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.Kstructureadr.inputValue}"
+                                                            label="#{bindings.Kstructureadr.label}"
+                                                            required="#{bindings.Kstructureadr.hints.mandatory}"
+                                                            shortDesc="#{bindings.Kstructureadr.hints.tooltip}"
+                                                            id="soc1"
+                                                            binding="#{backingBeanScope.backing_jsfFlder_Banque.soc1}">
+                                            <f:selectItems value="#{bindings.Kstructureadr.items}" id="si1"
+                                                           binding="#{backingBeanScope.backing_jsfFlder_Banque.si1}"/>
+                                            <f:validator binding="#{bindings.Kstructureadr.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:panelFormLayout>
+                                </af:panelBox>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Banque-->
+</f:view>

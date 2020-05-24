@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="Connexion.jsf" id="d1" binding="#{backingBeanScope.backing_jsfFlder_Connexion.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_Connexion.f1}">
+            <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_jsfFlder_Connexion.psl1}">
+                <f:facet name="bottom">
+                    <af:link text="Créer un compte" id="l1" binding="#{backingBeanScope.backing_jsfFlder_Connexion.l1}"
+                             action="#{backingBeanScope.backing_jsfFlder_Connexion.NCompte_action}"/>
+                </f:facet>
+                <f:facet name="center">
+                    <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_jsfFlder_Connexion.db1}"
+                                      topHeight="150px">
+                        <f:facet name="center">
+                            <af:panelBox text="Connexion" id="pb1"
+                                         binding="#{backingBeanScope.backing_jsfFlder_Connexion.pb1}">
+                                <f:facet name="toolbar"/>
+                                <af:inputText label="Nom utlisateur" id="it1"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Connexion.it1}"
+                                              value="#{backingBeanScope.backing_jsfFlder_Connexion.un}"/>
+                                <af:inputText label="Mot de passe" id="it2"
+                                              binding="#{backingBeanScope.backing_jsfFlder_Connexion.it2}"
+                                              value="#{backingBeanScope.backing_jsfFlder_Connexion.ps}"/>
+                                <af:button text="Log-In" id="b1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_Connexion.b1}"
+                                           icon="#{resource['images:connexion.png']}"
+                                           action="#{backingBeanScope.backing_jsfFlder_Connexion.loginAction}"/>
+                            </af:panelBox>
+                        </f:facet>
+                        <f:facet name="top">
+                            <h:graphicImage library="images/" name="login.png" id="gi1"
+                                            binding="#{backingBeanScope.backing_jsfFlder_Connexion.gi1}"
+                                            style="alignment-adjust:auto;" height="50" width="100"/>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top"/>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_Connexion-->
+</f:view>

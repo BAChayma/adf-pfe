@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="InscriptionContribuable.jsf" id="d1"
+                 binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.f1}">
+            <af:panelStretchLayout id="psl1"
+                                   binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.psl1}">
+                <f:facet name="bottom">
+                    <af:toolbar id="t2" binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.t2}">
+                        <af:spacer width="400" height="10" id="s1"
+                                   binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.s1}"/>
+                        <af:button text="Suivant" id="b3"
+                                   binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.b3}"
+                                   action="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.Suivant2_action}"/>
+                    </af:toolbar>
+                </f:facet>
+                <f:facet name="center">
+                    <af:decorativeBox id="db1"
+                                      binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.db1}">
+                        <f:facet name="center">
+                            <af:panelGroupLayout id="pgl1"
+                                                 binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.pgl1}">
+                                <af:panelFormLayout id="pfl1"
+                                                    binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.pfl1}">
+                                    <af:panelLabelAndMessage label="ID contribuable" id="plam1"
+                                                             binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.plam1}">
+                                        <af:outputText value="#{bindings.Kcnc.inputValue}"
+                                                       shortDesc="#{bindings.Kcnc.hints.tooltip}" id="ot1"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.ot1}">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Kcnc.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:inputText value="#{bindings.Nif.inputValue}" label="NIF"
+                                                  required="#{bindings.Nif.hints.mandatory}"
+                                                  columns="#{bindings.Nif.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Nif.hints.precision}"
+                                                  shortDesc="#{bindings.Nif.hints.tooltip}" id="it1"
+                                                  binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.it1}">
+                                        <f:validator binding="#{bindings.Nif.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Nomcommerciale.inputValue}" label="Nom commerciale"
+                                                  required="#{bindings.Nomcommerciale.hints.mandatory}"
+                                                  columns="#{bindings.Nomcommerciale.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Nomcommerciale.hints.precision}"
+                                                  shortDesc="#{bindings.Nomcommerciale.hints.tooltip}" id="it2"
+                                                  binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.it2}">
+                                        <f:validator binding="#{bindings.Nomcommerciale.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Raisonsociale.inputValue}" label="Raison sociale"
+                                                  required="#{bindings.Raisonsociale.hints.mandatory}"
+                                                  columns="#{bindings.Raisonsociale.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Raisonsociale.hints.precision}"
+                                                  shortDesc="#{bindings.Raisonsociale.hints.tooltip}" id="it3"
+                                                  binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.it3}">
+                                        <f:validator binding="#{bindings.Raisonsociale.validator}"/>
+                                    </af:inputText>
+                                    <af:inputDate value="#{bindings.Datedebexp.inputValue}"
+                                                  label="Date debut d'exploitation"
+                                                  required="#{bindings.Datedebexp.hints.mandatory}"
+                                                  columns="#{bindings.Datedebexp.hints.displayWidth}"
+                                                  shortDesc="#{bindings.Datedebexp.hints.tooltip}" id="id1"
+                                                  binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.id1}">
+                                        <f:validator binding="#{bindings.Datedebexp.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.Datedebexp.format}"/>
+                                    </af:inputDate>
+                                    <af:inputText value="#{bindings.Capitalsociale.inputValue}" label="Capital sociale"
+                                                  required="#{bindings.Capitalsociale.hints.mandatory}"
+                                                  columns="#{bindings.Capitalsociale.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Capitalsociale.hints.precision}"
+                                                  shortDesc="#{bindings.Capitalsociale.hints.tooltip}" id="it4"
+                                                  binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.it4}">
+                                        <f:validator binding="#{bindings.Capitalsociale.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.Capitalsociale.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Registrecommerce.inputValue}"
+                                                  label="Registre de commerce"
+                                                  required="#{bindings.Registrecommerce.hints.mandatory}"
+                                                  columns="#{bindings.Registrecommerce.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Registrecommerce.hints.precision}"
+                                                  shortDesc="#{bindings.Registrecommerce.hints.tooltip}" id="it5"
+                                                  binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.it5}">
+                                        <f:validator binding="#{bindings.Registrecommerce.validator}"/>
+                                    </af:inputText>
+                                    <af:selectOneChoice value="#{bindings.Kformjuri.inputValue}"
+                                                        label="#{bindings.Kformjuri.label}"
+                                                        required="#{bindings.Kformjuri.hints.mandatory}"
+                                                        shortDesc="#{bindings.Kformjuri.hints.tooltip}" id="soc1"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.soc1}">
+                                        <f:selectItems value="#{bindings.Kformjuri.items}" id="si1"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.si1}"/>
+                                        <f:validator binding="#{bindings.Kformjuri.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.activiteEse.inputValue}"
+                                                        label="#{bindings.activiteEse.label}"
+                                                        required="#{bindings.activiteEse.hints.mandatory}"
+                                                        shortDesc="#{bindings.activiteEse.hints.tooltip}" id="soc2"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.soc2}">
+                                        <f:selectItems value="#{bindings.activiteEse.items}" id="si2"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.si2}"/>
+                                        <f:validator binding="#{bindings.activiteEse.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.nationnalite.inputValue}"
+                                                        label="#{bindings.nationnalite.label}"
+                                                        required="#{bindings.nationnalite.hints.mandatory}"
+                                                        shortDesc="#{bindings.nationnalite.hints.tooltip}" id="soc3"
+                                                        binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.soc3}">
+                                        <f:selectItems value="#{bindings.nationnalite.items}" id="si3"
+                                                       binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.si3}"/>
+                                        <f:validator binding="#{bindings.nationnalite.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="top">
+                            <af:toolbar id="t1"
+                                        binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.t1}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                           binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.b1}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                           disabled="#{!bindings.Commit.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_jsfFlder_InscriptionContribuable.b2}"/>
+                            </af:toolbar>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top"/>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsfFlder_InscriptionContribuable-->
+</f:view>

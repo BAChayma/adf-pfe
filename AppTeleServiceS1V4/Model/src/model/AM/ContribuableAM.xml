@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContribuableAM"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="ContribuableVO1"
+    ViewObjectName="model.VO.ContribuableVO"/>
+  <ViewUsage
+    Name="DeclarationVO2"
+    ViewObjectName="model.VO.DeclarationVO"/>
+  <ViewUsage
+    Name="PaysVO2"
+    ViewObjectName="model.VO.PaysVO"/>
+  <ViewUsage
+    Name="PersonneVO2"
+    ViewObjectName="model.VO.PersonneVO"/>
+  <ViewUsage
+    Name="ComptebancaireVO2"
+    ViewObjectName="model.VO.ComptebancaireVO"/>
+  <ViewUsage
+    Name="AdresseVO3"
+    ViewObjectName="model.VO.AdresseVO"/>
+  <ViewUsage
+    Name="ReclamationVO1"
+    ViewObjectName="model.VO.ReclamationVO"/>
+  <ViewLinkUsage
+    Name="ContribuableDeclarationVL1"
+    ViewLinkObjectName="model.VL.ContribuableDeclarationVL"
+    SrcViewUsageName="model.AM.ContribuableAM.ContribuableVO1"
+    DstViewUsageName="model.AM.ContribuableAM.DeclarationVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContribuablePaysVL1"
+    ViewLinkObjectName="model.VL.ContribuablePaysVL"
+    SrcViewUsageName="model.AM.ContribuableAM.ContribuableVO1"
+    DstViewUsageName="model.AM.ContribuableAM.PaysVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContribuablePersonneVL1"
+    ViewLinkObjectName="model.VL.ContribuablePersonneVL"
+    SrcViewUsageName="model.AM.ContribuableAM.ContribuableVO1"
+    DstViewUsageName="model.AM.ContribuableAM.PersonneVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContribuableCompteBancaireVL1"
+    ViewLinkObjectName="model.VL.ContribuableCompteBancaireVL"
+    SrcViewUsageName="model.AM.ContribuableAM.ContribuableVO1"
+    DstViewUsageName="model.AM.ContribuableAM.ComptebancaireVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContribuableAdresseVL2"
+    ViewLinkObjectName="model.VL.ContribuableAdresseVL"
+    SrcViewUsageName="model.AM.ContribuableAM.ContribuableVO1"
+    DstViewUsageName="model.AM.ContribuableAM.AdresseVO3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContribuableReclamationVL1"
+    ViewLinkObjectName="model.VL.ContribuableReclamationVL"
+    SrcViewUsageName="model.AM.ContribuableAM.ContribuableVO1"
+    DstViewUsageName="model.AM.ContribuableAM.ReclamationVO1"
+    Reversed="false"/>
+</AppModule>
